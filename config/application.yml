@@ -43,14 +43,14 @@ default_env: &default_env
 
   # Host used to determine direct requests vs CDN.
   # See RobotsController.
-  CANONICAL_HOST: 'newsyband.herokuapp.com'
+  # CANONICAL_HOST: 'newsyband.herokuapp.com'
 
-  AUTH_FACEBOOK_KEY: ''
-  AUTH_FACEBOOK_SECRET: ''
-  AUTH_TWITTER_KEY: ''
-  AUTH_TWITTER_SECRET: ''
-  AUTH_GOOGLE_KEY: ''
-  AUTH_GOOGLE_SECRET: ''
+  # AUTH_FACEBOOK_KEY: ''
+  # AUTH_FACEBOOK_SECRET: ''
+  # AUTH_TWITTER_KEY: ''
+  # AUTH_TWITTER_SECRET: ''
+  # AUTH_GOOGLE_KEY: ''
+  # AUTH_GOOGLE_SECRET: ''
 
 
   # Devise password encryption keys.
