@@ -1,0 +1,13 @@
+%h2 Oops...
+
+- if @failed == 'no_account' && @provider
+  %p
+    Vous n'avez aucun compte connecté #{Authentication.provider_name(@provider)}.
+
+- else
+  %p
+    Une erreur s'est produite
+    - if @provider
+      avec #{Authentication.provider_name(@provider)}
+  %p
+    Veuillez recommencer.
