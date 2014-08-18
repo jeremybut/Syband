@@ -1,0 +1,359 @@
+fr:
+  brand:
+    name: 'Syband'
+
+  emails:
+    welcome:
+      subject: 'Bienvenue sur Syband'
+
+  auth:
+    login:
+      title: 'Veuillez vous connecter, ou %{signup_link}'
+      link: 'Connexion'
+      link_with: 'Connexion avec %{provider}'
+    signup:
+      title: 'Inscription'
+      link: 'Inscription'
+      help: 'Déja enregistré? %{login_link}'
+      email_taken: 'Cette adresse email est déjà utilisée. %{login_link}'
+    logout:
+      link: 'Déconnexion'
+    forgot:
+      link: "J\'ai oublié mon mot de passe"
+      prompt: 'Mot de passe oublié?'
+      submit: 'Envoyer les instructions de mot de passe oublié'
+    reset:
+      link: 'Changer votre mot de passe'
+      submit: 'Réinitialiser mot de passe'
+      invalid_title: 'Impossible de réinitialiser le mot de passe'
+      invalid_message: 'Votre session est expirée, veuillez vous connecter à nouveau.'
+    confirm:
+      link: 'Je dois confirmer mon compte'
+      submit: 'Renvoyer les instructions de confirmation'
+    unlock:
+      link: 'Mon compte est bloqué'
+      submit: 'Renvoyer les instructions de débloquage'
+    links:
+      title: 'Aide compte'
+    edit:
+      link: 'Social'
+    destroy:
+      link: 'Déconnecter'
+      prompt: 'Déconnecter le compte?'
+      tooltip: 'Déconnecter le compte et supprimer les données liées.'
+      warning: ''
+      notice: 'Votre compte sera déconnecté, vous pourrez vous reconnecter à tout moment.'
+      submit: 'Oui, déconnecter ce compte'
+      cancel: 'Annuler'
+    reconnect:
+      link: 'Mettre à jour'
+      tooltip: 'Mettre à jour mes données de compte'
+
+  account:
+    edit:
+      link: 'Compte'
+    destroy:
+      link: 'Supprimer mon compte'
+      prompt: 'Supprimer mon compte?'
+      warning: 'Votre compte sera supprimé définitivement, ceci est irreversible.'
+      notice: ''
+      submit: 'Oui, supprimer mon comte'
+      cancel: 'Annuler'
+
+  accounts:
+    connected: 'Félicitation, votre compte sociale est connecté.'
+    updated: 'Félicitation! Votre compte sociale est mis à jour.'
+    edit:
+      link: 'Sociale'
+
+  # See rails_admin locale file for more settings
+  admin:
+    link: 'Admin'           # Name of admin link in application drop down menu
+    home:
+      name: 'Application'   # Name of link back to app in admin dashboard
+    dashboard:
+      name: 'Admin'         # Title of admin dashboard on the left
+      title: 'Admin'
+
+  errors:
+    unknown: "Oops! Quelque chose s'est mal passé. Veuillez essayer à nouveau."
+
+  unauthorized:
+    default: "Desolé, vous n'êtes pas autorisé à visualiser cette page."
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: 'est utilisé par un autre compte'
+
+  helpers:
+    submit:
+      user:
+        # Submit button used by simple_form in users/registrations#edit
+        update: 'Mettre à jour compte'
+        create: "S'inscrire"
+
+  simple_form:
+    # Collections: selects, radios
+    'yes': 'Oui'
+    'no': 'Non'
+
+    required:
+      text: 'requis'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Merci d'examiner les problèmes ci-dessous:"
+
+    placeholders:
+      user:
+        email: 'vous@exemple.com'
+        password: 'mot de passe'
+
+    labels:
+      user:
+        edit:
+          password: 'Nouveau mot de passe'
+
+    hints:
+      user:
+        edit:
+          password: 'Laissez blanc pour ne pas mettre à jour le mot de passe'
+
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+# French translations for Ruby on Rails
+# by Christian Lescuyer (christian@flyingcoders.com)
+# contributors:
+#  - Sebastien Grosjean - ZenCocoon.com
+#  - Bruno Michel - http://github.com/nono
+#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
+# Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
+  date:
+    abbr_day_names:
+      - dim
+      - lun
+      - mar
+      - mer
+      - jeu
+      - ven
+      - sam
+    abbr_month_names:
+      - ~
+      - jan.
+      - fév.
+      - mar.
+      - avr.
+      - mai
+      - juin
+      - juil.
+      - août
+      - sept.
+      - oct.
+      - nov.
+      - déc.
+    day_names:
+      - dimanche
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - vendredi
+      - samedi
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+      - ~
+      - janvier
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
+      - août
+      - septembre
+      - octobre
+      - novembre
+      - décembre
+    order:
+      - :day
+      - :month
+      - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:   "environ une heure"
+        other: "environ %{count} heures"
+      about_x_months:
+        one:   "environ un mois"
+        other: "environ %{count} mois"
+      about_x_years:
+        one:   "environ un an"
+        other: "environ %{count} ans"
+      almost_x_years:
+        one:   "presqu'un an"
+        other: "presque %{count} ans"
+      half_a_minute: "une demi-minute"
+      less_than_x_minutes:
+        zero:  "moins d'une minute"
+        one:   "moins d'une minute"
+        other: "moins de %{count} minutes"
+      less_than_x_seconds:
+        zero:  "moins d'une seconde"
+        one:   "moins d'une seconde"
+        other: "moins de %{count} secondes"
+      over_x_years:
+        one:   "plus d'un an"
+        other: "plus de %{count} ans"
+      x_days:
+        one:   "1 jour"
+        other: "%{count} jours"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one:   "1 mois"
+        other: "%{count} mois"
+      x_seconds:
+        one:   "1 seconde"
+        other: "%{count} secondes"
+    prompts:
+      day:    "Jour"
+      hour:   "Heure"
+      minute: "Minute"
+      month:  "Mois"
+      second: "Seconde"
+      year:   "Année"
+  errors: &errors
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      accepted: "doit être accepté(e)"
+      blank: "doit être rempli(e)"
+      present: "doit être vide"
+      confirmation: "ne concorde pas avec la confirmation"
+      empty: "doit être rempli(e)"
+      equal_to: "doit être égal à %{count}"
+      even: "doit être pair"
+      exclusion: "n'est pas disponible"
+      greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+      inclusion: "n'est pas inclus(e) dans la liste"
+      invalid: "n'est pas valide"
+      less_than: "doit être inférieur à %{count}"
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+      not_a_number: "n'est pas un nombre"
+      not_an_integer: "doit être un nombre entier"
+      odd: "doit être impair"
+      record_invalid: "La validation a échoué : %{errors}"
+      restrict_dependent_destroy:
+        one: "Suppression impossible: un autre enregistrement est lié"
+        many: "Suppression impossible: d'autres enregistrements sont liés"
+      taken: "n'est pas disponible"
+      too_long:
+        one: "est trop long (pas plus d'un caractère)"
+        other: "est trop long (pas plus de %{count} caractères)"
+      too_short:
+        one: "est trop court (au moins un caractère)"
+        other: "est trop court (au moins %{count} caractères)"
+      wrong_length:
+        one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
+        other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      other_than: "doit être différent de %{count}"
+    template: &errors_template
+      body: "Veuillez vérifier les champs suivants : "
+      header:
+        one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
+        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+  helpers:
+    select:
+      prompt: "Veuillez sélectionner"
+    submit:
+      create: "Créer un(e) %{model}"
+      submit: "Enregistrer ce(tte) %{model}"
+      update: "Modifier ce(tte) %{model}"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: "milliard"
+          million: "million"
+          quadrillion: "million de milliards"
+          thousand: "millier"
+          trillion: "billion"
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "octet"
+            other: "octets"
+          gb: "Go"
+          kb: "ko"
+          mb: "Mo"
+          tb: "To"
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: 'am'
+    formats:
+      default: "%d %B %Y %H:%M:%S"
+      long: "%A %d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: 'pm'
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
