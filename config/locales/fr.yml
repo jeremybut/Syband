@@ -61,10 +61,10 @@ fr:
       cancel: 'Annuler'
 
   accounts:
-    connected: 'Félicitation, votre compte sociale est connecté.'
-    updated: 'Félicitation! Votre compte sociale est mis à jour.'
+    connected: 'Félicitation, votre compte social est connecté.'
+    updated: 'Félicitation! Votre compte social est mis à jour.'
     edit:
-      link: 'Sociale'
+      link: 'Social'
 
   # See rails_admin locale file for more settings
   admin:

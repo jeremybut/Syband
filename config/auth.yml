@@ -14,7 +14,7 @@ defaults: &defaults
 
   # List of providers that allow multiple connected accounts
   # Users often have multiple Twitter accounts not Facebook or LinkedIn
-  allow_multiple: ['twitter']
+  allow_multiple: ['']
 
   providers:
     facebook:
@@ -35,11 +35,6 @@ defaults: &defaults
       anywhere_key:
       key: <%= ENV['AUTH_TWITTER_KEY'] %>
       secret: <%= ENV['AUTH_TWITTER_SECRET'] %>
-    # linkedin:
-    #   name: LinkedIn
-    #   logout: 'https://www.linkedin.com'
-    #   key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
-    #   secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
     google_oauth2:
       name: Google
       logout: 'https://www.google.com'
@@ -49,6 +44,11 @@ defaults: &defaults
         access_type: offline
         approval_prompt: force
         scope: https://www.google.com/m8/feeds,userinfo.email,userinfo.profile
+    # linkedin:
+    #   name: LinkedIn
+    #   logout: 'https://www.linkedin.com'
+    #   key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
+    #   secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
 
 development:
   <<: *defaults

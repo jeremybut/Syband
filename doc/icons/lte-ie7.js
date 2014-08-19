@@ -10,7 +10,7 @@ window.onload = function() {
 			'sico-facebook' : '&#xf09a;',
 			'sico-linkedin' : '&#xf0e1;',
 			'sico-github' : '&#xf09b;',
-			'sico-google-plus' : '&#xf0d5;'
+			'sico-google_oauth2' : '&#xf0d5;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
