@@ -10,6 +10,11 @@
 #
 
 class Status < ActiveRecord::Base
+  belongs_to :usersongs
+
+  validates_presence_of :label
+  validates_presence_of :percentage
+
   rails_admin do
     label "Statut" 
     label_plural "Statuts"

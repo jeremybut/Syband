@@ -16,6 +16,9 @@ class Membership < ActiveRecord::Base
   belongs_to :user
   belongs_to :band
 
+  validates_presence_of :user_id
+  validates_presence_of :band_id
+
   rails_admin do
     label "Utilisateur - Groupe (membership)" 
     label_plural "Utilisateurs - Groupes (membership)"

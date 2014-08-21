@@ -12,28 +12,31 @@
 class Picture < ActiveRecord::Base
   belongs_to :imageable, polymorphic: true
 
+  validates_presence_of :imageable_id
+  validates_presence_of :imageable_type
+
   rails_admin do
     label "Image" 
     label_plural "Images"
     navigation_label 'Entitées'
     
-    list do
-      field :imageable_id do
-        label "Id image"
-      end            
-      field :imageable_type do
-      	label "Image attaché à"
-      end
-    end
+    # list do
+    #   field :imageable_id do
+    #     label "Id image"
+    #   end            
+    #   field :imageable_type do
+    #   	label "Image attaché à"
+    #   end
+    # end
     
-    edit do
-    exclude_fields
-      field :imageable_id do
-        label "Id image"
-      end            
-      field :imageable_type do
-      	label "Image attaché à"
-      end           
-    end    
+    # edit do
+    # exclude_fields
+    #   field :imageable_id do
+    #     label "Id image"
+    #   end            
+    #   field :imageable_type do
+    #   	label "Image attaché à"
+    #   end           
+    # end    
   end    
 end

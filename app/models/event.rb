@@ -13,6 +13,11 @@ class Event < ActiveRecord::Base
   belongs_to :band
   belongs_to :setlist
 
+  validates_presence_of :band_id
+
+  # has_one :setlist
+  # has_one :band
+
   rails_admin do
     label "Evènement" 
     label_plural "Evènements"

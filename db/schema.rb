@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821113858) do
+ActiveRecord::Schema.define(version: 20140821191852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,20 +64,10 @@ ActiveRecord::Schema.define(version: 20140821113858) do
     t.foreign_key ["user_id"], "users", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_authentications_user_id"
   end
 
-  create_table "pictures", force: true do |t|
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["imageable_id", "imageable_type"], :name => "index_pictures_on_imageable_id_and_imageable_type"
-  end
-
   create_table "bands", force: true do |t|
-    t.integer  "picture_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["picture_id"], :name => "index_bands_on_picture_id"
-    t.foreign_key ["picture_id"], "pictures", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_bands_picture_id"
+    t.string   "name"
   end
 
   create_table "songs", force: true do |t|
@@ -104,6 +94,9 @@ ActiveRecord::Schema.define(version: 20140821113858) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "band_id"
+    t.index ["band_id"], :name => "index_setlists_on_band_id"
+    t.foreign_key ["band_id"], "bands", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_setlists_band_id"
   end
 
   create_table "events", force: true do |t|
@@ -138,6 +131,14 @@ ActiveRecord::Schema.define(version: 20140821113858) do
     t.datetime "updated_at"
     t.index ["authentication_id"], :name => "index_oauth_caches_on_authentication_id", :unique => true
     t.foreign_key ["authentication_id"], "authentications", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_oauth_caches_authentication_id"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["imageable_id", "imageable_type"], :name => "index_pictures_on_imageable_id_and_imageable_type"
   end
 
   create_table "rails_admin_histories", force: true do |t|

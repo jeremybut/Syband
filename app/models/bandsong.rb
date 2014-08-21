@@ -13,6 +13,9 @@ class Bandsong < ActiveRecord::Base
   belongs_to :band
   belongs_to :song
 
+  validates_presence_of :band_id
+  validates_presence_of :song_id  
+
   rails_admin do
     label "Groupe - Musique (bandsong)" 
     label_plural "Groupes - Musiques (bandsong)"

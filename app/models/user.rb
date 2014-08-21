@@ -31,6 +31,12 @@
 class User < ActiveRecord::Base
   include Concerns::UserImagesConcern
 
+  has_many :memberships
+  has_many :usersongs
+
+  has_many :bands, through: :memberships 
+  has_many :songs, through: :usersongs
+
   rails_admin do
     label "Utilisateur" 
     label_plural "Utilisateurs"

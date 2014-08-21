@@ -13,7 +13,11 @@
 class Usersong < ActiveRecord::Base
   belongs_to :user
   belongs_to :song
-  belongs_to :status
+  has_one :status
+
+  validates_presence_of :user_id
+  validates_presence_of :song_id
+  validates_presence_of :status_id
 
   rails_admin do
     label "Utilisateur - Musique (usersong)" 
@@ -21,25 +25,29 @@ class Usersong < ActiveRecord::Base
     navigation_label 'Associations'
     
     list do
-      field :user do
-        label "Utilisateur"
-      end            
-      field :song do
-      	label "Musique"
-      end
-      field :status do
-      	label "Statut"
-      end
+      # field :user do
+      #   label "Utilisateur"
+      # end            
+      # field :song do
+      # 	label "Musique"
+      # end
+      # field :status do
+      # 	label "Statut"
+      # end
     end
     
     edit do
     exclude_fields
-      field :user do
-        label "Utilisateur"
-      end            
-      field :song do
-      	label "Musique"
-      end
+    field :status_id do
+      hide
+    end
+      # field :user do
+      #   label "Utilisateur"
+      # end            
+      # field :song do
+      # 	label "Musique"
+      # end
+      
       field :status do
       	label "Statut"
       end            

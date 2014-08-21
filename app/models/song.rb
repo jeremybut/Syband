@@ -11,6 +11,17 @@
 #
 
 class Song < ActiveRecord::Base
+    has_many :setlistsongs
+    has_many :bandsongs
+    has_many :usersongs
+
+    validates_presence_of :title
+
+    has_many :setlists, through: :setlistsongs
+    has_many :bands, through: :bandsongs
+    has_many :users, through: :usersongs
+
+
   rails_admin do
     label "Musique" 
     label_plural "Musiques"

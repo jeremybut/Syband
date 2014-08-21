@@ -7,6 +7,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  band_id     :integer
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
