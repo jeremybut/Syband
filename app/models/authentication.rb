@@ -1,7 +1,92 @@
+# == Schema Information
+#
+# Table name: authentications
+#
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  provider      :string(255)      not null
+#  proid         :string(255)      not null
+#  token         :string(255)
+#  refresh_token :string(255)
+#  secret        :string(255)
+#  expires_at    :datetime
+#  username      :string(255)
+#  image_url     :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class Authentication < ActiveRecord::Base
   include Concerns::OmniauthConcern
   include Concerns::UserImagesConcern
   include Concerns::AuthenticationProvidersConcern
+
+  rails_admin do
+    label "Authentification" 
+    label_plural "Authentifications"
+    navigation_label 'Profils Utilisateurs'
+    
+    list do
+      field :user do
+        label "Utilisateur"
+      end            
+      field :provider do
+        label "Fournisseur"
+      end
+      field :proid do
+        label "Id fournisseur"
+      end
+      field :token do
+        label "Jeton"
+      end
+      field :refresh_token do
+        label "Jeton actualisé"
+      end
+      field :secret do
+        label "Clé secrète"
+      end
+      field :expires_at do
+        label "Expire le"
+      end
+      field :username do
+        label "Nom d'utilisateur"
+      end
+      field :image_url do
+        label "Url avatar"
+      end
+    end
+    
+    edit do
+    exclude_fields
+      field :user do
+        label "Utilisateur"
+      end            
+      field :provider do
+        label "Fournisseur"
+      end
+      field :proid do
+        label "Id fournisseur"
+      end
+      field :token do
+        label "Jeton"
+      end
+      field :refresh_token do
+        label "Jeton actualisé"
+      end
+      field :secret do
+        label "Clé secrète"
+      end
+      field :expires_at do
+        label "Expire le"
+      end
+      field :username do
+        label "Nom d'utilisateur"
+      end
+      field :image_url do
+        label "Url avatar"
+      end      
+    end    
+  end
 
   belongs_to :user
 

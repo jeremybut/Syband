@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Band:
+  = @bandsong.band
+%p
+  %b Song:
+  = @bandsong.song
+
+= link_to 'Edit', edit_bandsong_path(@bandsong)
+\|
+= link_to 'Back', bandsongs_path

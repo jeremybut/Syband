@@ -1,0 +1,8 @@
+= simple_form_for(@band) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :picture
+
+  .form-actions
+    = f.button :submit

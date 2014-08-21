@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Picture:
+  = @band.picture
+
+= link_to 'Edit', edit_band_path(@band)
+\|
+= link_to 'Back', bands_path

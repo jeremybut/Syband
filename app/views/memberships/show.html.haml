@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @membership.user
+%p
+  %b Band:
+  = @membership.band
+%p
+  %b User asked:
+  = @membership.user_asked
+%p
+  %b Band asked:
+  = @membership.band_asked
+%p
+  %b Is admin:
+  = @membership.is_admin
+
+= link_to 'Edit', edit_membership_path(@membership)
+\|
+= link_to 'Back', memberships_path

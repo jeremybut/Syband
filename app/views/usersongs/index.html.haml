@@ -1,0 +1,23 @@
+%h1 Listing usersongs
+
+%table
+  %tr
+    %th User
+    %th Song
+    %th Status
+    %th
+    %th
+    %th
+
+  - @usersongs.each do |usersong|
+    %tr
+      %td= usersong.user
+      %td= usersong.song
+      %td= usersong.status
+      %td= link_to 'Show', usersong
+      %td= link_to 'Edit', edit_usersong_path(usersong)
+      %td= link_to 'Destroy', usersong, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Usersong', new_usersong_path

@@ -1,0 +1,23 @@
+%h1 Listing setlistsongs
+
+%table
+  %tr
+    %th Setlist
+    %th Song
+    %th Position
+    %th
+    %th
+    %th
+
+  - @setlistsongs.each do |setlistsong|
+    %tr
+      %td= setlistsong.setlist
+      %td= setlistsong.song
+      %td= setlistsong.position
+      %td= link_to 'Show', setlistsong
+      %td= link_to 'Edit', edit_setlistsong_path(setlistsong)
+      %td= link_to 'Destroy', setlistsong, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Setlistsong', new_setlistsong_path

@@ -1,0 +1,12 @@
+= simple_form_for(@membership) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :user
+    = f.association :band
+    = f.input :user_asked
+    = f.input :band_asked
+    = f.input :is_admin
+
+  .form-actions
+    = f.button :submit

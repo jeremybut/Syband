@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @setlist.name
+%p
+  %b Description:
+  = @setlist.description
+
+= link_to 'Edit', edit_setlist_path(@setlist)
+\|
+= link_to 'Back', setlists_path

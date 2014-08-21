@@ -1,0 +1,27 @@
+%h1 Listing memberships
+
+%table
+  %tr
+    %th User
+    %th Band
+    %th User asked
+    %th Band asked
+    %th Is admin
+    %th
+    %th
+    %th
+
+  - @memberships.each do |membership|
+    %tr
+      %td= membership.user
+      %td= membership.band
+      %td= membership.user_asked
+      %td= membership.band_asked
+      %td= membership.is_admin
+      %td= link_to 'Show', membership
+      %td= link_to 'Edit', edit_membership_path(membership)
+      %td= link_to 'Destroy', membership, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Membership', new_membership_path

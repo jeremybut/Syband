@@ -1,0 +1,9 @@
+= simple_form_for(@event) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :band
+    = f.association :setlist
+
+  .form-actions
+    = f.button :submit

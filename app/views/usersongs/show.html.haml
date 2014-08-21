@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @usersong.user
+%p
+  %b Song:
+  = @usersong.song
+%p
+  %b Status:
+  = @usersong.status
+
+= link_to 'Edit', edit_usersong_path(@usersong)
+\|
+= link_to 'Back', usersongs_path
