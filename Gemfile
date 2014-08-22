@@ -59,8 +59,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-# gem 'omniauth-linkedin'
+gem 'omniauth-linkedin'
 # gem 'omniauth-persona'
+
+
+# Var env
+gem 'figaro'
 
 # Admin
 gem 'rails_admin'

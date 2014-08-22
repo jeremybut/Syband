@@ -38,17 +38,18 @@ defaults: &defaults
     google_oauth2:
       name: Google
       logout: 'https://www.google.com'
-      key: '614378359628-qosc1onjrd80vkbkm6s802jukaaadqfe.apps.googleusercontent.com'
-      secret: 'MX10Ck9KYlCuNfAFqNNcr0x7'
+      key: <%= ENV["AUTH_GOOGLE_KEY"] %>
+      secret: <%= ENV["AUTH_GOOGLE_SECRET"] %>
       oauth:
         access_type: offline
         approval_prompt: force
         scope: https://www.google.com/m8/feeds,userinfo.email,userinfo.profile
-    # linkedin:
-    #   name: LinkedIn
-    #   logout: 'https://www.linkedin.com'
-    #   key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
-    #   secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
+    linkedin:
+      name: LinkedIn
+      logout: 'https://www.linkedin.com'
+      key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
+      secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
+      scope: 'r_fullprofile r_emailaddress r_network'
 
 development:
   <<: *defaults

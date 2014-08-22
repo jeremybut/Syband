@@ -43,14 +43,18 @@ default_env: &default_env
 
   # Host used to determine direct requests vs CDN.
   # See RobotsController.
-  # CANONICAL_HOST: 'newsyband.herokuapp.com'
 
-  # AUTH_FACEBOOK_KEY: ''
-  # AUTH_FACEBOOK_SECRET: ''
-  # AUTH_TWITTER_KEY: ''
-  # AUTH_TWITTER_SECRET: ''
-  # AUTH_GOOGLE_KEY: ''
-  # AUTH_GOOGLE_SECRET: ''
+  GMAIL_USERNAME: 'buttice.j@gmail.com'
+  GMAIL_PASSWORD: 'L5dq6!@C'
+  CANONICAL_HOST: 'syband.herokuapp.com'
+  AUTH_TWITTER_KEY: '7sM63iIXgkwlHLKxjJxXCpBdg'
+  AUTH_TWITTER_SECRET: '4DYUwuodCF9pJeWjtVmlYywJEAZUoQSG8rz2znfE5iLnqqjEdH'
+  AUTH_GOOGLE_KEY: '614378359628-qosc1onjrd80vkbkm6s802jukaaadqfe.apps.googleusercontent.com'
+  AUTH_GOOGLE_SECRET: 'MX10Ck9KYlCuNfAFqNNcr0x7'
+  AUTH_FACEBOOK_KEY: '765709983472880'
+  AUTH_FACEBOOK_SECRET: '6e96984fcdfc3621de89e18ec78822c5'
+  AUTH_LINKEDIN_KEY: '774uf4is1jk2sq'
+  AUTH_LINKEDIN_SECRET: 'xsqwc1pUPqYetumB'
 
 
   # Devise password encryption keys.
