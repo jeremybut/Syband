@@ -1,16 +1,5 @@
 source 'https://rubygems.org'
-
-#
-# PLATFORM SPECIFIC
-#
-# OSX
-# gem 'rb-fsevent', group: [:development, :test]        # monitor file changes without hammering the disk
-# gem 'terminal-notifier-guard', group: [:development]  # notify terminal when specs run
-# gem 'terminal-notifier', group: [:development]
-# LINUX
-gem 'rb-inotify', :group => [:development, :test]   # monitor file changes without hammering the disk
-
-
+ruby "2.0.0"
 
 # Monitoring
 gem 'rack-timeout', '~> 0.1.0beta3'
@@ -95,9 +84,18 @@ group :development do
   gem 'guard-rspec'
   # gem 'guard-livereload'
   # gem 'rack-livereload'
+  
+  if RUBY_PLATFORM.downcase.include?("darwin")
+    gem 'terminal-notifier-guard', group: [:development]  # notify terminal when specs run
+    gem 'terminal-notifier', group: [:development]
+  end
 end
 
 group :development, :test do
+  # monitor file changes without hammering the disk
+  gem 'rb-fsevent' if RUBY_PLATFORM.downcase.include?("darwin")
+  gem 'rb-inotify' if RUBY_PLATFORM.downcase.include?("linux")
+  
   # Use spring or zeus
   gem 'spring'                  # keep application running in the background
   gem 'spring-commands-rspec'

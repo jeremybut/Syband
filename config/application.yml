@@ -44,8 +44,8 @@ default_env: &default_env
   # Host used to determine direct requests vs CDN.
   # See RobotsController.
 
-  GMAIL_USERNAME: 'buttice.j@gmail.com'
-  GMAIL_PASSWORD: 'L5dq6!@C'
+  GMAIL_USERNAME: 'sybandtest@gmail.com'
+  GMAIL_PASSWORD: 'omgsybandwtf'
   CANONICAL_HOST: 'syband.herokuapp.com'
   AUTH_TWITTER_KEY: '7sM63iIXgkwlHLKxjJxXCpBdg'
   AUTH_TWITTER_SECRET: '4DYUwuodCF9pJeWjtVmlYywJEAZUoQSG8rz2znfE5iLnqqjEdH'
