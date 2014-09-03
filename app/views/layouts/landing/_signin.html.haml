@@ -1,0 +1,45 @@
+#hero.static-header.light
+  .text-heading
+    %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
+      Créez votre compte
+  .container
+    .row
+      .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        %form#registration.form.form-register.dark.animated.hiding{"data-animation" => "bounceInUp", "data-delay" => "1500", :action => "", :method => "post"}
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{:for => "email"} Email
+            .col-sm-9.col-xs-12
+              %input#email.form-control.required.email{:name => "email", :placeholder => "", :type => "email"}
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{:for => "password"} Mot de passe
+            .col-sm-9.col-xs-12
+              %input#password.form-control.required{:name => "password", :placeholder => "", :type => "password"}
+          .form-group
+            %label.col-sm-3.col-xs-12.control-label{:for => "confirmPassword"} Confirmer
+            .col-sm-9.col-xs-12
+              %input#confirmPassword.form-control.required{:name => "confirmPassword", :placeholder => "", :type => "password"}
+          .form-group
+            .col-md-12 
+              %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"} Créer mon compte
+          .social-text
+            Créez votre compte depuis un réseau social.                      
+          .form-group
+            .col-md-6
+              %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+                %i.fa.fa-facebook 
+                Facebook
+              %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+                %i.fa.fa-google  
+                Google            
+            .col-md-6
+              %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+                %i.fa.fa-twitter
+                Twiter              
+              %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+                %i.fa.fa-linkedin
+                Linkedin  
+        %p.agree-text
+          En validant vous acceptez nos conditions, 
+          %a{:href => '/terms'} Terms 
+          and
+          %a{:href => '/privacy'} Privacy.

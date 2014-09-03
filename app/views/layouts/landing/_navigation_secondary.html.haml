@@ -1,0 +1,17 @@
+%header
+  %nav.navigation.navigation-header
+    .container
+      .navigation-brand
+        .brand-logo
+          %a.logo{:href => "/"}
+          %span.sr-only Syband Music
+        %button.navigation-toggle.visible-xs{"data-target" => ".navigation-navbar", "data-toggle" => "dropdown", :type => "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      .navigation-navbar
+        %ul.navigation-bar.navigation-bar-right
+          %li
+            %a{:href => "/login"} Connexion
+          %li.featured
+            %a{:href => "/signin"} Inscription
