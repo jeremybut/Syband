@@ -1,17 +1,28 @@
-#hero.static-header.light.clearfix
+#accueil.static-header.light.clearfix
   .text-heading
     %h1.animated.hiding{"data-animation" => "bounceInDown", "data-delay" => "1500"}
-      %span.highlight> Syband &nbsp; 
+      %span.highlight> Syband&nbsp;
       révolutionne la communication
       %br dans votre groupe !
     %ul.list-inline
       %li
-        %a.btn.btn-primary.animated.hiding{"data-animation" => "bounceIn", "data-delay" => "1500", :href => "/signin"} Utiliser
+        %a.btn.btn-primary.animated.hiding{"data-animation" => "bounceIn", "data-delay" => "2400", :href => "/signin"} Utiliser
       %li
-        %a.btn.btn-default.animated.hiding{"data-animation" => "bounceIn", "data-delay" => "2000", :href => "#decouvrir"} Découvrir
+        %a.btn.btn-default.animated.hiding{"data-animation" => "bounceIn", "data-delay" => "2700", :href => "#decouvrir"} Découvrir
   .video-wrapper
     .container
-      %img#decouvrir.img-responsive.animated.hiding{:alt => "video", "data-animation" => "bounceInUp", "data-delay" => "2000", :src => "/assets/landing/features/app_block.png"}/
+      %img#decouvrir.img-responsive.animated.hiding{:alt => "video", "data-animation" => "bounceInUp", "data-delay" => "800", :src => "/assets/images/app_block.png"}/
+%section#decouvrir.long-block.light
+  .container
+    .col-md-12.col-lg-9
+      %i.icon.icon-seo-icons-24.pull-left
+      %article.pull-left
+        %h2
+          %strong SYBAND
+          POUR SMARTPHONE !
+        %p.thin L'utilisation de syband est gratuit et illimité.
+    .col-md-12.col-lg-3
+      %a.btn.btn-default{:href => "#"} TESTER      
 %a#showHere
 %section#about.section.dark
   .container
@@ -26,7 +37,7 @@
       #first-tab-alt.tab-pane.active
         .section-content.row
           .col-sm-6.animated.hiding{"data-animation" => "fadeInLeft"}
-            %img.img-responsive{:alt => "process 3", :src => "/assets/landing/features/people.jpg"}/
+            %img.img-responsive{:alt => "process 3", :src => "/assets/images/people.jpg"}/
           .col-sm-6.animated.hiding{"data-animation" => "fadeInRight"}
             %br/
             %article.center
@@ -44,7 +55,7 @@
       #second-tab-alt.tab-pane
         .section-content.row
           .col-sm-6.pull-right.animated.hiding{"data-animation" => "fadeInRight"}
-            %img.img-responsive.pull-right{:alt => "process 2", :src => "/assets/landing/features/phone.jpg"}/
+            %img.img-responsive.pull-right{:alt => "process 2", :src => "/assets/images/phone.jpg"}/
           .col-sm-6.animated.hiding{"data-animation" => "fadeInLeft"}
             %br/
             %br/
@@ -105,7 +116,7 @@
   .container
     .section-content.row
       .col-sm-6.pull-right.animated.hiding{"data-animation" => "fadeInRight"}
-        %img.img-responsive{:alt => "process 2", :src => "/assets/landing/features/content_image1.png"}/
+        %img.img-responsive{:alt => "process 2", :src => "/assets/images/content_image1.png"}/
       .col-sm-6.animated.hiding{"data-animation" => "fadeInLeft"}
         %br/
         %br/
@@ -120,7 +131,7 @@
           %p In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
       %hr.clearfix/
       .col-sm-6.animated.hiding{"data-animation" => "fadeInLeft"}
-        %img.img-responsive{:alt => "process 3", :src => "/assets/landing/features/helmet.jpg"}/
+        %img.img-responsive{:alt => "process 3", :src => "/assets/images/helmet.jpg"}/
       .col-sm-6.animated.hiding{"data-animation" => "fadeInRight"}
         %br/
         %br/
@@ -168,11 +179,11 @@
               / <div class="tab-icon"><span class="icon icon-seo-icons-28"></span></div>
         .tab-content.animated.hiding{"data-animation" => "fadeInLeft"}
           #home.tab-pane.in.active
-            %img.img-responsive.animated.hiding{:alt => "macbook", "data-animation" => "fadeInLeft", :src => "/assets/landing/features/rich_features_1.png"}/
+            %img.img-responsive.animated.hiding{:alt => "macbook", "data-animation" => "fadeInLeft", :src => "/assets/images/rich_features_1.png"}/
           #profile.tab-pane
-            %img.img-responsive.animated.hiding{:alt => "macbook", "data-animation" => "fadeInLeft", :src => "/assets/landing/features/rich_features_2.png"}/
+            %img.img-responsive.animated.hiding{:alt => "macbook", "data-animation" => "fadeInLeft", :src => "/assets/images/rich_features_2.png"}/
           #messages.tab-pane
-            %img.img-responsive.animated.hiding{:alt => "macbook", "data-animation" => "fadeInLeft", :src => "/assets/landing/features/rich_features_3.png"}/
+            %img.img-responsive.animated.hiding{:alt => "macbook", "data-animation" => "fadeInLeft", :src => "/assets/images/rich_features_3.png"}/
 %section#features-list.section.dark
   .container.animated.hiding{"data-animation" => "fadeInDown"}
     .col-md-3.col-sm-6.col-xs-12
@@ -215,23 +226,12 @@
         %i.icon.icon-badges-votes-16.icon-active
         %span.h7 FONCTION 8
         %p.thin Sit amet, consectetur adipiscing elit. In hac divisione rem ipsam prorsus probo elegantiam desidero.
-%section#guarantee.long-block.light
-  .container
-    .col-md-12.col-lg-9
-      %i.icon.icon-seo-icons-24.pull-left
-      %article.pull-left
-        %h2
-          %strong SYBAND
-          POUR SMARTPHONE !
-        %p.thin L'utilisation de syband est gratuit et illimité.
-    .col-md-12.col-lg-3
-      %a.btn.btn-default{:href => "#"} TESTER
-%footer#footer.footer.light
+%footer#footer.footer.light#contacts
   .container
     .footer-content.row
       .col-sm-4
         .logo-wrapper
-          %img{:alt => "logo", :src => "/assets/landing/logo.png"}/
+          %img{:alt => "logo", :src => "/assets/images/logo.png"}/
         %p Ut enim ad minim veniam, quis nostrud exercitation ullamco. Qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Nisi ut aliquid ex ea commodi consequatur?
         %p
           %strong> T.Haratyk, J.Buttice Fondateurs

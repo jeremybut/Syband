@@ -22,7 +22,7 @@ common: &common
     phone: '555-555-5555'
 
   session:
-    key: '_starterkit_session'
+    key: '_syband_session'
     expire_after: <%= 30.days %>
 
   rack:

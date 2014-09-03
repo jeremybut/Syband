@@ -15,7 +15,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module StarterKit
+module Syband
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -34,7 +34,7 @@ module StarterKit
     config.i18n.default_locale = :fr
 
     # Enable faster precompiles
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
 
     # Serve vendor fonts
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
