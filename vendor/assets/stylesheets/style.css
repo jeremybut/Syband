@@ -22,7 +22,8 @@ html {
 body {
   font-family: "Lato", sans-serif !important;
   color: #666666;
-  background: #e8e8e8;
+  /*background: #e8e8e8;*/
+  background: url(/assets/bg-3.png) repeat 0 0;
   padding-top: 140px;
   min-height: 100%; }
 
@@ -212,50 +213,50 @@ body.login1 {
 /*----------------------------------------------------------------------------------- */
 /*  Login 2 */
 /*----------------------------------------------------------------------------------- */
-div.login2 {
+body.login2 {
   padding: 30px 0 0;
   background: #eeeeee; }
-  div.login2 .login-wrapper {
+  body.login2 .login-wrapper {
     max-width: 420px;
     margin: 0 auto;
     text-align: center; }
-    div.login2 .login-wrapper img {
+    body.login2 .login-wrapper img {
       margin: 40px auto; }
-    div.login2 .login-wrapper .input-group-addon {
+    body.login2 .login-wrapper .input-group-addon {
       padding: 8px 0;
       background: #f4f4f4;
       min-width: 48px;
       text-align: center; }
-      div.login2 .login-wrapper .input-group-addon i.icon-lock {
+      body.login2 .login-wrapper .input-group-addon i.icon-lock {
         font-size: 18px; }
-    div.login2 .login-wrapper input.form-control {
+    body.login2 .login-wrapper input.form-control {
       height: 48px;
       font-size: 15px;
       box-shadow: none; }
-    div.login2 .login-wrapper .checkbox {
+    body.login2 .login-wrapper .checkbox {
       margin-bottom: 30px; }
-    div.login2 .login-wrapper input[type="submit"] {
+    body.login2 .login-wrapper input[type="submit"] {
       padding: 10px 0 12px;
       margin: 20px 0 30px; }
-      div.login2 .login-wrapper input[type="submit"]:hover {
+      body.login2 .login-wrapper input[type="submit"]:hover {
         background: transparent; }
-    div.login2 .login-wrapper .social-login {
+    body.login2 .login-wrapper .social-login {
       margin-bottom: 20px;
       padding-bottom: 25px;
       border-bottom: 1px solid #cccccc; }
-      div.login2 .login-wrapper .social-login > .btn {
+      body.login2 .login-wrapper .social-login > .btn {
         width: 49%;
         margin: 0; }
-      div.login2 .login-wrapper .social-login .facebook {
+      body.login2 .login-wrapper .social-login .facebook {
         background-color: #335397;
         border-color: #335397; }
-        div.login2 .login-wrapper .social-login .facebook:hover {
+        body.login2 .login-wrapper .social-login .facebook:hover {
           background-color: transparent;
           color: #335397; }
-      div.login2 .login-wrapper .social-login .twitter {
+      body.login2 .login-wrapper .social-login .twitter {
         background-color: #00c7f7;
         border-color: #00c7f7; }
-        div.login2 .login-wrapper .social-login .twitter:hover {
+        body.login2 .login-wrapper .social-login .twitter:hover {
           background-color: transparent;
           color: #00c7f7; }
 
@@ -271,7 +272,7 @@ div.login2 {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   padding: 0;
   min-height: 45px;
-  /*height: 112px;*/
+  height: 112px;
   width: 100%;
   border: 0;
   -webkit-transition: all 0.3s;
@@ -297,9 +298,9 @@ div.login2 {
       .navbar .container-fluid.top-bar .navbar-toggle .icon-bar {
         background-color: #c6c6c6; }
     .navbar .container-fluid.top-bar .logo {
-      background: url("/assets/syband-logo.png") no-repeat 0 0;
-      width: 54px;
-      height: 16px;
+      background: url("/assets/logo-inverted.png") no-repeat 0 0;
+      width: 212px;
+      height: 28px;
       float: left;
       text-indent: -9999em;
       margin: 14px 10px 0 0; }
@@ -391,7 +392,7 @@ div.login2 {
             padding: 5px 10px 6px;
             color: #999999; }
           .navbar .container-fluid.top-bar .nav > li.user img {
-            /*border-radius: 50%;*/
+            border-radius: 50%;
             margin-right: 8px; }
           .navbar .container-fluid.top-bar .nav > li.user .caret {
             vertical-align: middle;
@@ -1239,7 +1240,8 @@ th:active {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 75px; }
+      height: 75px; 
+    }
       .social-wrapper #social-container .profile-widget .profile-stats > div {
         height: 100%;
         border-left: 1px solid #e0e0e0;
@@ -2997,18 +2999,18 @@ body.fourofour {
       body.login1 .login-container p.signup a {
         display: block; }
 
-  div.login2 {
+  body.login2 {
     padding-top: 0px; }
-    div.login2 .login-wrapper {
+    body.login2 .login-wrapper {
       padding: 15px; }
-      div.login2 .login-wrapper img {
+      body.login2 .login-wrapper img {
         margin: 30px auto; }
-      div.login2 .login-wrapper input[type="submit"] {
+      body.login2 .login-wrapper input[type="submit"] {
         margin-bottom: 20px; }
-      div.login2 .login-wrapper .social-login {
+      body.login2 .login-wrapper .social-login {
         padding-bottom: 15px;
         margin-bottom: 15px; }
-        div.login2 .login-wrapper .social-login > .btn {
+        body.login2 .login-wrapper .social-login > .btn {
           width: 100%;
           margin-bottom: 6px; }
 

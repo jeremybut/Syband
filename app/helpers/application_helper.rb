@@ -14,4 +14,9 @@ module ApplicationHelper
       render(view, *args, &block)
     end
   end
+
+  # Ajout des "actives" menu
+  def cp(path)
+    "current" if current_page?(path)
+  end  
 end

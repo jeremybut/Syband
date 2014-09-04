@@ -7,7 +7,7 @@ module Concerns::UserImagesConcern
     # Modify provider specific image methods as needed after changing IMAGE_SIZES.
     unless defined? IMAGE_SIZES
       IMAGE_SIZES = {
-        tiny:   24,
+        tiny:   34,
         thumb:  48,
         large:  73
       }.freeze

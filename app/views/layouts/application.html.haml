@@ -6,6 +6,7 @@
     %title= content_for?(:title) ? yield(:title) : I18n.t('brand.name')
     %meta{content: (content_for?(:description) ? yield(:description) : I18n.t('brand.name')), name: 'description'}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:100,300,400,700", :media => "all", :rel => "stylesheet", :type => "text/css"}
     /[if lt IE 9]
       = javascript_include_tag 'ie', 'data-turbolinks-track' => true
     = javascript_include_tag 'head', 'data-turbolinks-track' => true
@@ -14,15 +15,9 @@
     = yield :head
     = render 'layouts/airbrake'
   %body{class: "controller__#{controller_name} action__#{action_name}"}
-    = render 'layouts/navigation'
-    .container
-      .errors__container
-        = render 'layouts/messages'
+    .modal-shiftfix
+      = render 'layouts/navigation'
+      = render 'layouts/messages'
       = yield
-      %footer.page__footer
-        - if content_for? :footer
-          = yield :footer
-        - else
-          = render 'layouts/footer'
-    = render 'layouts/analytics'
-    = render 'layouts/javascripts'
+      = render 'layouts/analytics'
+      = render 'layouts/javascripts'

@@ -23,7 +23,7 @@
  *     ensure that you either have "example_alt_pagination" as a body class name, or better yet,
  *     modify that selector.
  *   Note that the path used for Images is relative. All images are by default located in
- *     /assets/tables/ - relative to this CSS file.
+ *     ../images/tables/ - relative to this CSS file.
  */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -160,25 +160,25 @@ table.dataTable {
 }
 
 .paginate_disabled_previous {
-  background: url('http://www.sharpandnimble.com/se7en/demo/images/tables/back_disabled.html') no-repeat top left;
+  background: url('../../../../www.sharpandnimble.com/se7en/demo/images/tables/back_disabled.html') no-repeat top left;
 }
 
 .paginate_enabled_previous {
-  background: url('http://www.sharpandnimble.com/se7en/demo/images/tables/back_enabled.html') no-repeat top left;
+  background: url('../../../../www.sharpandnimble.com/se7en/demo/images/tables/back_enabled.html') no-repeat top left;
 }
 .paginate_enabled_previous:hover {
-  background: url('http://www.sharpandnimble.com/se7en/demo/images/tables/back_enabled_hover.html') no-repeat top left;
+  background: url('../../../../www.sharpandnimble.com/se7en/demo/images/tables/back_enabled_hover.html') no-repeat top left;
 }
 
 .paginate_disabled_next {
-  background: url('http://www.sharpandnimble.com/se7en/demo/images/tables/forward_disabled.html') no-repeat top right;
+  background: url('../../../../www.sharpandnimble.com/se7en/demo/images/tables/forward_disabled.html') no-repeat top right;
 }
 
 .paginate_enabled_next {
-  background: url('http://www.sharpandnimble.com/se7en/demo/images/tables/forward_enabled.html') no-repeat top right;
+  background: url('../../../../www.sharpandnimble.com/se7en/demo/images/tables/forward_enabled.html') no-repeat top right;
 }
 .paginate_enabled_next:hover {
-  background: url('http://www.sharpandnimble.com/se7en/demo/images/tables/forward_enabled_hover.html') no-repeat top right;
+  background: url('../../../../www.sharpandnimble.com/se7en/demo/images/tables/forward_enabled_hover.html') no-repeat top right;
 }
 
 

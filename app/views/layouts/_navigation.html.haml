@@ -1,18 +1,64 @@
-%nav.navbar.navbar-default.navbar-fixed-top{role: 'navigation'}
-  .navbar-header
-    %button.navbar-toggle{type: 'button', data: {toggle: 'collapse', target: '.navbar-collapse'}}
-      %span.sr-only
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-    = link_to I18n.t('brand.name'), root_path, class: 'navbar-brand'
-
-  .collapse.navbar-collapse
-    %ul.nav.navbar-nav.navbar-right
-      - if user_signed_in?
-        %li.dropdown
-          %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
+.navbar.navbar-fixed-top.scroll-hide
+  .container-fluid.top-bar
+    .pull-right
+      %ul.nav.navbar-nav.pull-right
+        %li.dropdown.notifications.hidden-xs
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %span.se7en-flag{"aria-hidden" => "true"}
+            .sr-only
+              Notifications
+            %p.counter
+              4
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"}
+                .notifications.label.label-info
+                  New
+                %p
+                  New user added: Jane Smith
+            %li
+              %a{:href => "#"}
+                .notifications.label.label-info
+                  New
+                %p
+                  Sales targets available
+            %li
+              %a{:href => "#"}
+                .notifications.label.label-info
+                  New
+                %p
+                  New performance metric added
+            %li
+              %a{:href => "#"}
+                .notifications.label.label-info
+                  New
+                %p
+                  New growth data available
+        %li.dropdown.messages.hidden-xs
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %span.se7en-envelope{"aria-hidden" => "true"}
+            .sr-only
+              Messages
+            %p.counter
+              3
+          %ul.dropdown-menu.messages
+            %li
+              %a{:href => "#"}
+                %img{:height => "34", :src => "/assets/avatar-male2.png", :width => "34"}>/
+                Could we meet today? I wanted...
+            %li
+              %a{:href => "#"}
+                %img{:height => "34", :src => "/assets/avatar-female.png", :width => "34"}>/
+                Important data needs your analysis...
+            %li
+              %a{:href => "#"}
+                %img{:height => "34", :src => "/assets/avatar-male2.png", :width => "34"}>/
+                Buy Se7en today, it's a great theme...
+        %li.dropdown.user.hidden-xs
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             = render 'users/avatar', size: :tiny
+            = current_user.last_name
+            = current_user.first_name
             %b.caret
           %ul.dropdown-menu
             - if current_user.is_admin?
@@ -21,4 +67,16 @@
             %li= link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
       - unless user_signed_in?
         %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
-        %li= link_to I18n.t('auth.login.link'), new_user_session_path
+        %li= link_to I18n.t('auth.login.link'), new_user_session_path                
+    %button.navbar-toggle
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.logo{:href => "/home"} Syband
+  .container-fluid.main-nav.clearfix
+    .nav-collapse
+      %ul.nav
+        %li
+          %a{href: '/home', class: cp(user_home_path)}
+            %span.se7en-home{"aria-hidden" => "true"}>
+            Accueil

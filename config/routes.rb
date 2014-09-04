@@ -1,23 +1,14 @@
 # Route prefixes use a single letter to allow for vanity urls of two or more characters
 Rails.application.routes.draw do
   resources :memberships
-
   resources :setlistsongs
-
   resources :events
-
   resources :setlists
-
   resources :bandsongs
-
   resources :bands
-
   resources :pictures
-
   resources :usersongs
-
   resources :songs
-
   resources :statuses
 
   if defined? Sidekiq
@@ -56,7 +47,8 @@ Rails.application.routes.draw do
   resources :users, path: 'u', only: :show do
     resources :authentications, path: 'accounts'
   end
-  get '/home' => 'users#show', as: 'user_home'
+  # get '/home' => 'users#show', as: 'user_home'
+  get '/home' => 'pages#home', as: 'user_home'
 
   # Dummy preview pages for testing.
   get '/p/test' => 'pages#test', as: 'test'

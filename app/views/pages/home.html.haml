@@ -1,11 +1,383 @@
-%h1= I18n.t('brand.name')
-
-%p
-  Rails 4 starter app with social authentication and other goodies.
-
-%p
-  = I18n.t 'brand.name'
-  uses best practices and code extracted from several production projects.
-
-%p
-  = link_to 'Github', 'https://github.com/starterkits/rails4-starterkit'
+.container-fluid.main-content
+  .social-wrapper
+    #social-container
+    .row
+      .col-lg-12
+        #load-more.btn.btn-lg.btn-block.btn-default
+          %i.icon-spinner.icon-spin>
+          Chargement du contenu
+    #hidden-items
+      / Share Form
+      .item.widget-container.share-widget.fluid-height.clearfix
+        .widget-content.padded
+          %textarea.form-control{:placeholder => "What's new...", :rows => "4"}
+        .clearfix
+          .col-xs-3.share-options.active
+            %i.icon-pencil
+            %p
+              Text
+          .col-xs-3.share-options
+            %i.icon-camera
+            %p
+              Photo
+          .col-xs-3.share-options
+            %i.icon-link
+            %p
+              Link
+          .col-xs-3.share-options
+            %i.icon-youtube-play
+            %p
+              Video
+      / end Share Form
+      / Profile Widget
+      .item.widget-container.fluid-height.profile-widget
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "70", :src => "/assets/avatar-male.jpg", :width => "70"}/
+            .profile-details
+              %a.user-name{:href => "#"} John Smith
+              %p
+                Sharp&Nimble Designer
+              %em
+                %i.icon-map-marker>
+                Washington, D.C.
+          .profile-stats
+            .col-xs-4
+              %a{:href => "#"}
+                %h2
+                  245
+              %p
+                Posts
+            .col-xs-4
+              %a{:href => "#"}
+                %h2
+                  150
+              %p
+                Friends
+            .col-xs-4
+              %a{:href => "#"}
+                %h2
+                  12
+              %p
+                Videos
+      / end Profile Widget
+      / Text Post
+      .item.widget-container.fluid-height.social-entry
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %p.content
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          .btn.btn-sm.btn-default-outline
+            %i.icon-thumbs-up-alt
+          .btn.btn-sm.btn-default-outline
+            %i.icon-mail-forward
+        .comments.padded
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-female.png", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} Fishy Robertson
+              %p
+                %em 1 day ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-male.jpg", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} John Smith
+              %p
+                %em 16 minutes ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Text Post
+      .item.social-widget.twitter
+        %i.icon-twitter
+        .social-data
+          %h1
+            16k
+          Followers
+      / Media Post
+      .item.widget-container.clearfix.social-entry
+        .widget-content
+          .profile-info.clearfix.padded
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-male2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Sad Franklin
+              %p
+                %em 12 days ago
+          %img.social-content-media{:height => "262", :src => "/assets/social-image.jpg", :width => "350"}/
+          .padded
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Donec odio. Quisque volutpat mattis eros.
+            .btn.btn-sm.btn-default-outline
+              %i.icon-thumbs-up-alt
+            .btn.btn-sm.btn-default-outline
+              %i.icon-mail-forward
+        .comments.padded
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Media Post
+      / Text Post
+      .item.widget-container.fluid-height.social-entry
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %p.content
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra.
+          .btn.btn-sm.btn-default-outline
+            %i.icon-thumbs-up-alt
+          .btn.btn-sm.btn-default-outline
+            %i.icon-mail-forward
+        .comments.padded
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-male.jpg", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} John Smith
+              %p
+                %em 16 minutes ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Text Post
+      .item.social-widget.facebook
+        %i.icon-facebook-sign
+        .social-data
+          %h1
+            120
+          Likes
+      / Media Post
+      .item.widget-container.clearfix.social-entry
+        .widget-content
+          .profile-info.clearfix.padded
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-male2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Sad Franklin
+              %p
+                %em 12 days ago
+          %img.social-content-media{:height => "262", :src => "http://dribbble.s3.amazonaws.com/users/13774/screenshots/621770/_134.jpg", :width => "350"}/
+          .padded
+            .btn.btn-sm.btn-default-outline
+              %i.icon-thumbs-up-alt
+            .btn.btn-sm.btn-default-outline
+              %i.icon-mail-forward
+        .comments.padded
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-male.jpg", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} John Smith
+              %p
+                %em 16 minutes ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Media Post
+      / Text Post
+      .item.widget-container.fluid-height.social-entry
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %p.content
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+          .btn.btn-sm.btn-default-outline
+            %i.icon-thumbs-up-alt
+          .btn.btn-sm.btn-default-outline
+            %i.icon-mail-forward
+        .comments.padded
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Text Post
+      .item.social-widget.instagram
+        %i.icon-instagram
+        .social-data
+          %h1
+            120k
+          Followers
+      / Text Post
+      .item.widget-container.fluid-height.social-entry
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %p.content
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          .btn.btn-sm.btn-default-outline
+            %i.icon-thumbs-up-alt
+          .btn.btn-sm.btn-default-outline
+            %i.icon-mail-forward
+        .comments.padded
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-female.png", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} Fishy Robertson
+              %p
+                %em 1 day ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-male.jpg", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} John Smith
+              %p
+                %em 16 minutes ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Text Post
+      / Media Post
+      .item.widget-container.clearfix.social-entry
+        .widget-content
+          .profile-info.clearfix.padded
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-male2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Sad Franklin
+              %p
+                %em 12 days ago
+          %img.social-content-media{:height => "262", :src => "http://dribbble.s3.amazonaws.com/users/13774/screenshots/217337/manofscience.jpg", :width => "350"}/
+          .padded
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Donec odio. Quisque volutpat mattis eros.
+            .btn.btn-sm.btn-default-outline
+              %i.icon-thumbs-up-alt
+            .btn.btn-sm.btn-default-outline
+              %i.icon-mail-forward
+        .comments.padded
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Media Post
+      .item.social-widget.pinterest
+        %i.icon-pinterest
+        .social-data
+          %h1
+            230
+          Repins
+      / Text Post
+      .item.widget-container.fluid-height.social-entry
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %p.content
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra.
+          .btn.btn-sm.btn-default-outline
+            %i.icon-thumbs-up-alt
+          .btn.btn-sm.btn-default-outline
+            %i.icon-mail-forward
+        .comments.padded
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-male.jpg", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} John Smith
+              %p
+                %em 16 minutes ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Text Post
+      / Media Post
+      .item.widget-container.clearfix.social-entry
+        .widget-content
+          .profile-info.clearfix.padded
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-male2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Sad Franklin
+              %p
+                %em 12 days ago
+          %img.social-content-media{:height => "262", :src => "http://dribbble.s3.amazonaws.com/users/13774/screenshots/1162435/turntable_1x.jpg", :width => "350"}/
+          .padded
+            .btn.btn-sm.btn-default-outline
+              %i.icon-thumbs-up-alt
+            .btn.btn-sm.btn-default-outline
+              %i.icon-mail-forward
+        .comments.padded
+          .comment
+            %img.social-avatar.pull-left{:height => "40", :src => "/assets/avatar-male.jpg", :width => "40"}/
+            .profile-details.clearfix
+              %a.user-name{:href => "#"} John Smith
+              %p
+                %em 16 minutes ago
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Media Post
+      .item.social-widget.dribbble
+        %i.icon-dribbble
+        .social-data
+          %h1
+            185
+          Rebounds
+      / Text Post
+      .item.widget-container.fluid-height.social-entry
+        .widget-content.padded
+          .profile-info.clearfix
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %p.content
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.
+          .btn.btn-sm.btn-default-outline
+            %i.icon-thumbs-up-alt
+          .btn.btn-sm.btn-default-outline
+            %i.icon-mail-forward
+        .comments.padded
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Text Post
+      / Media Post
+      .item.widget-container.fluid-height.clearfix.social-entry
+        .widget-content
+          .profile-info.clearfix.padded
+            %img.social-avatar.pull-left{:height => "50", :src => "/assets/avatar-female2.png", :width => "50"}/
+            .profile-details
+              %a.user-name{:href => "#"} Stan Humanbot
+              %p
+                %em 2 days ago
+          %iframe.social-content-media{:allowfullscreen => "", :frameborder => "0", :height => "200", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/73135695?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff", :webkitallowfullscreen => "", :width => "100%"}
+          .padded
+            %p.content
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Donec odio. Quisque volutpat mattis eros.
+            .btn.btn-sm.btn-default-outline
+              %i.icon-thumbs-up-alt
+            .btn.btn-sm.btn-default-outline
+              %i.icon-mail-forward
+        .comments.padded
+          %form{:role => "form"}
+            .form-group
+              %input#exampleInputEmail1.form-control{:placeholder => "Add a comment...", :type => "email"}
+      / end Media Post
