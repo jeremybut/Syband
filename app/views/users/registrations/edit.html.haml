@@ -8,6 +8,9 @@
       %p= button_to I18n.t('auth.confirm.submit'), confirmation_path(resource_name), class: 'btn btn-warning btn-xs'
 
   = render 'users/registrations/form', show_all: true
-
+%p
+  Vous n'avez pas encore de compte?
+%a.btn.btn-default-outline.btn-block{:href => "/a/signup"} Inscription
+%p
   = render 'users/shared/links', disable_signup: true
 

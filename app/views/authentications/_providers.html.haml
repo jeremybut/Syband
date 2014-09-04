@@ -1,10 +1,9 @@
 - flow        ||= 'login'
-- css_class   ||= 'btn btn-primary'
 - providers   ||= Authentication.providers
+- css_class   ||= 'btn btn-primary pull-left'
 
-.auth__providers
+.social-login.clearfix
   - providers.each do |provider|
-    .auth__providers__provider
-      = link_to provider_auth_path(provider, flow: flow), data: {flow: flow, provider: provider}, class: css_class do
-        %i.sico-fixed{class: "sico-#{provider}"}
-        = Authentication.provider_name(provider)
+    = link_to provider_auth_path(provider, flow: flow), data: {flow: flow, provider: provider}, class: "btn btn-primary pull-left #{provider}" do
+      %i{class: "icon-#{provider}"}>
+      #{provider}

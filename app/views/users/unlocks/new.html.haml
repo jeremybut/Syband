@@ -1,8 +1,8 @@
-.auth__form
-  %h2= I18n.t 'auth.unlock.link'
+%a
+  %img{:height => "30", :src => "/assets/logo-inverted.png"}
 
   = simple_form_for resource, as: resource_name, url: unlock_path(resource_name), method: :post do |f|
-    = f.input :email, autofocus: true, required: true
-    = f.button :submit, I18n.t('auth.unlock.submit'), class: 'btn-primary'
+    = f.input :email, autofocus: true, label: false, required: true
+    = f.button :submit, I18n.t('auth.unlock.submit'), class: 'btn btn-lg btn-primary btn-block'
 
   = render "users/shared/links"

@@ -941,10 +941,10 @@ a .icon-flip-vertical:before {
 .icon-pinterest-sign:before {
   content: "\f0d3"; }
 
-.icon-google-plus-sign:before {
+.icon-google_oauth2-sign:before {
   content: "\f0d4"; }
 
-.icon-google-plus:before {
+.icon-google_oauth2:before {
   content: "\f0d5"; }
 
 .icon-money:before {

@@ -16,14 +16,12 @@
 
 .auth__form
   - unless @auth
-    %h3.title
-      = I18n.t('auth.signup.title').html_safe
-      .help-block
-        = I18n.t('auth.signup.help', login_link: login_link).html_safe
+    %a
+      %img{:height => "30", :src => "/assets/logo-inverted.png"}
 
     = render 'authentications/providers', flow: 'signup', icons: true, color: true
     .auth__or
-      %hr/
+      %hr
       %span ou
 
   - else # @auth
@@ -33,7 +31,7 @@
       = @auth.display_name
     %p
       Ce n'est pas vous?
-      = link_to 'Reset', destroy_user_session_path, rel: :nofollow, class: 'btn btn-default btn-xs'
+      = link_to 'Effacer', destroy_user_session_path, rel: :nofollow, class: 'btn btn-default btn-xs'
 
     - unless @existing_account
       %p
@@ -64,3 +62,5 @@
 
 - content_for :on_ready do
   $('input[name="user[email]"]').on('click keydown', function(){$(this).closest('form').find('.collapse').addClass('in')});
+
+

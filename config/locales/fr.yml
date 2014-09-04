@@ -32,7 +32,7 @@ fr:
       submit: 'Renvoyer les instructions de confirmation'
     unlock:
       link: 'Mon compte est bloqué'
-      submit: 'Renvoyer les instructions de débloquage'
+      submit: 'Renvoyer les instructions de déblocage'
     links:
       title: 'Aide compte'
     edit:
