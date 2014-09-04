@@ -54,20 +54,21 @@
               %a{:href => "#"}
                 %img{:height => "34", :src => "/assets/avatar-male2.png", :width => "34"}>/
                 Buy Se7en today, it's a great theme...
-        %li.dropdown.user.hidden-xs
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            = render 'users/avatar', size: :tiny
-            = current_user.last_name
-            = current_user.first_name
-            %b.caret
-          %ul.dropdown-menu
-            - if current_user.is_admin?
-              %li= link_to I18n.t('admin.link'), rails_admin_path, data: {"no-turbolink" => true}
-            %li= link_to I18n.t('account.edit.link'), edit_user_registration_path
-            %li= link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
-      - unless user_signed_in?
-        %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
-        %li= link_to I18n.t('auth.login.link'), new_user_session_path                
+        - if user_signed_in?
+          %li.dropdown.user.hidden-xs
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              = render 'users/avatar', size: :tiny
+              = current_user.last_name
+              = current_user.first_name
+              %b.caret
+            %ul.dropdown-menu
+              - if current_user.is_admin?
+                %li= link_to I18n.t('admin.link'), rails_admin_path, data: {"no-turbolink" => true}
+              %li= link_to I18n.t('account.edit.link'), edit_user_registration_path
+              %li= link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
+        - unless user_signed_in?
+          %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
+          %li= link_to I18n.t('auth.login.link'), new_user_session_path                
     %button.navbar-toggle
       %span.icon-bar
       %span.icon-bar
