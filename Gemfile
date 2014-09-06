@@ -66,6 +66,7 @@ gem 'rails-i18n', '~> 4.0.0'
 # Utils
 gem 'addressable'
 gem 'settingslogic'
+gem 'carrierwave', '~> 0.9'
 
 group :development do
   # Docs

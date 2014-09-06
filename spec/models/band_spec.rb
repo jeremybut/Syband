@@ -6,6 +6,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  name       :string(255)
+#  picture_id :integer
 #
 
 require 'spec_helper'

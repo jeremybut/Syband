@@ -6,11 +6,13 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  name       :string(255)
+#  picture_id :integer
 #
 
 class Band < ActiveRecord::Base
 
-  has_one :picture, as: :imageable
+  mount_uploader :picture, AttachmentUploader
+  has_many :pictures, as: :imageable
   has_many :setlists
 
   has_many :memberships

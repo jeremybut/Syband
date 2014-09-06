@@ -56,7 +56,6 @@ Rails.application.routes.draw do
 
   get 'robots.:format' => 'robots#index'
 
-
   # get 'login' => 'layouts#login_landing'
   # get 'signin' => 'layouts#signin_landing'
   root 'layouts#application_landing'

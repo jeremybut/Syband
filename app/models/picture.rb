@@ -7,13 +7,16 @@
 #  imageable_type :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
+#  attachment     :string(255)
+#  name           :string(255)
 #
 
 class Picture < ActiveRecord::Base
   belongs_to :imageable, polymorphic: true
-
-  validates_presence_of :imageable_id
-  validates_presence_of :imageable_type
+  mount_uploader :attachment, AttachmentUploader
+  
+  # validates_presence_of :imageable_id
+  # validates_presence_of :imageable_type
 
   rails_admin do
     label "Image" 

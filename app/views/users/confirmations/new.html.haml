@@ -5,4 +5,4 @@
     = f.input :email, autofocus: true, required: true, label: false, disabled: (user_signed_in? and resource.email.present?)
     = f.button :submit, I18n.t('auth.confirm.submit'), class: 'btn btn-lg btn-primary btn-block'
 
-  = render "users/shared/links"
+  = render "users/shared/links", disable_forgot: true

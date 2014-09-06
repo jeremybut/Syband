@@ -15,14 +15,13 @@
   = render 'users/registrations/failed', provider: @provider
 
 .auth__form
-  - unless @auth
-    %a
-      %img{:height => "30", :src => "/assets/logo-inverted.png"}
 
+  %a
+    %img{:height => "30", :src => "/assets/logo-inverted.png"}
+
+  - unless @auth
+    = render 'users/registrations/form', hide_password: @auth.present?
     = render 'authentications/providers', flow: 'signup', icons: true, color: true
-    .auth__or
-      %hr
-      %span ou
 
   - else # @auth
     %h2
@@ -49,16 +48,15 @@
     .alert.alert-warning
       = I18n.t('auth.signup.email_taken', login_link: login_with_link).html_safe
 
-  = render 'users/registrations/form', hide_password: @auth.present?
+%p
+  Vous n'avez pas encore de compte?
+%a.btn.btn-default-outline.btn-block{:href => "/a/login"} Connexion
 
-  .auth__links
-    En vous inscrivant, vous acceptez nos conditions
-    = link_to 'Conditions', terms_path
-    et
-    = succeed '.' do
-      = link_to 'Confidentialité', privacy_path
+.auth__links
+  En vous inscrivant, vous acceptez nos conditions
+  = link_to 'Conditions.', terms_path
 
-  = render 'users/social/facepile'
+  / = render 'users/social/facepile'
 
 - content_for :on_ready do
   $('input[name="user[email]"]').on('click keydown', function(){$(this).closest('form').find('.collapse').addClass('in')});
