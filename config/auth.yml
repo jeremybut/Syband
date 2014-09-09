@@ -54,7 +54,8 @@ defaults: &defaults
       name: Spotify
       key: 'b369a074ee9d4701ba37472e1b94817c'
       secret: '788c6e3fb5be48e3967e73f081727f8a'
-      scope: user-read-private
+      oauth:
+        scope: user-read-private
 
 
 development:

@@ -225,7 +225,13 @@ body.login2 {
     margin: 0 auto;
     text-align: center; }
     body.login2 .login-wrapper img {
-      margin: 40px auto; }
+      margin: 40px auto; 
+      width: 48px;
+    }
+    body.login2 .login-wrapper img.logo{
+      width: 212px;
+      height: 28px;
+    }
     body.login2 .login-wrapper .input-group-addon {
       padding: 8px 0;
       background: #f4f4f4;
@@ -461,6 +467,10 @@ body.login2 {
 
 .navbar.scroll-hide.closed {
   top: -45px; }
+
+.navbar img {
+  width: 48px;
+}
 
 /*----------------------------------------------------------------------------------- */
 /*  Page Titles */
