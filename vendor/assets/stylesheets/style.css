@@ -512,6 +512,30 @@ body.login2 {
     .btn-primary:hover .caret, .btn-primary.active .caret {
       border-top-color: #007aff; }
 
+.btn-primary.spotify{
+  background: #81b71a;
+  border-color: #81b71a;
+}
+.btn.spotify:hover{
+  background: transparent;
+  color: #007aff;
+}
+.btn-primary.google_oauth2{
+  background: #dd4b39;
+  border-color: #dd4b39;
+}
+.btn.google_oauth2:hover{
+  background: transparent;
+  color: #007aff;
+}
+.btn-primary.linkedin{
+  background: #007bb6;
+  border-color: #007bb6;
+}
+.btn.linkedin:hover{
+  background: transparent;
+  color: #007aff;
+}
 .btn-success {
   background: #60c560;
   border-color: #60c560; }

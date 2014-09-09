@@ -946,6 +946,9 @@ a .icon-flip-vertical:before {
 
 .icon-google_oauth2:before {
   content: "\f0d5"; }
+.icon-spotify:before{
+  content: "\f1bc";
+}
 
 .icon-money:before {
   content: "\f0d6"; }

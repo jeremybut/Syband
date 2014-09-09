@@ -50,7 +50,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="sico-"] {
 */
-.sico-twitter, .sico-facebook, .sico-linkedin, .sico-github, .sico-google_oauth2 {
+.sico-twitter, .sico-facebook, .sico-linkedin, .sico-github, .sico-google_oauth2, .sico-spotify {
   font-family: 'Social-Icons';
   speak: none;
   font-style: normal;
@@ -73,5 +73,8 @@ you can use the generic selector below, but it's slower:
   content: "\f09b";
 }
 .sico-google_oauth2:before {
+  content: "\f0d5";
+}
+.sico-spotify:before {
   content: "\f0d5";
 }

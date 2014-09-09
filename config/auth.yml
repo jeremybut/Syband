@@ -50,6 +50,12 @@ defaults: &defaults
       key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
       secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
       scope: 'r_fullprofile r_emailaddress r_network'
+    spotify:
+      name: Spotify
+      key: 'b369a074ee9d4701ba37472e1b94817c'
+      secret: '788c6e3fb5be48e3967e73f081727f8a'
+      scope: user-read-private
+
 
 development:
   <<: *defaults

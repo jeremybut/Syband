@@ -1,11 +1,3 @@
--# This view is the heart of the registration page...
--# Multiple actions render this view
-
--# States:
--#    User has connected an auth provider but has not yet completed registration
--#    User has clicked on the Sign up link
--#    User submitted registration form but there was an error
-
 - if resource.email.present?
   - login_link = link_to I18n.t('auth.login.link'), add_to_url(new_user_session_path, email: resource.email)
 - else
@@ -15,13 +7,14 @@
   = render 'users/registrations/failed', provider: @provider
 
 .auth__form
-
-  %a
-    %img{:height => "30", :src => "/assets/logo-inverted.png"}
-
   - unless @auth
-    = render 'users/registrations/form', hide_password: @auth.present?
+    %a
+      %img{:height => "30", :src => "/assets/logo-inverted.png"}
+
     = render 'authentications/providers', flow: 'signup', icons: true, color: true
+    .auth__or
+      %hr
+      %span ou
 
   - else # @auth
     %h2
@@ -48,17 +41,17 @@
     .alert.alert-warning
       = I18n.t('auth.signup.email_taken', login_link: login_with_link).html_safe
 
-%p
-  Vous n'avez pas encore de compte?
-%a.btn.btn-default-outline.btn-block{:href => "/a/login"} Connexion
+  = render 'users/registrations/form', hide_password: @auth.present?
 
-.auth__links
-  En vous inscrivant, vous acceptez nos conditions
-  = link_to 'Conditions.', terms_path
+  .auth__links
+    En vous inscrivant, vous acceptez nos conditions
+    = link_to 'Conditions', terms_path
+    et
+    = succeed '.' do
+      = link_to 'Confidentialité', privacy_path
 
-  / = render 'users/social/facepile'
+  = render 'users/social/facepile'
 
 - content_for :on_ready do
   $('input[name="user[email]"]').on('click keydown', function(){$(this).closest('form').find('.collapse').addClass('in')});
-
 
