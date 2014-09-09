@@ -6,12 +6,18 @@
 = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
   - if devise_mapping.rememberable?
     = f.input :remember_me, as: :hidden, input_html: {value: true}
-  = f.input :email, autofocus: true, required: true, label: false
+  .input-group
+    %span.input-group-addon
+      %i.icon-envelope    
+    = f.input :email, autofocus: true, required: true, label: false
 
+  .input-group
+    %span.input-group-addon
+      %i.icon-lock        
+    = f.input_field :password, required: true, autocomplete: 'off'
   = f.input :password, required: true, label: false do |input|
     - if devise_mapping.recoverable?
       = link_to I18n.t('auth.forgot.prompt'), new_password_path(resource_name), class: 'pull-right small'
-    = f.input_field :password, required: true, autocomplete: 'off'
   = f.button :submit, I18n.t('auth.login.link'), class: 'btn btn-lg btn-primary btn-block' 
   
   = render 'authentications/providers', flow: 'login', icons: true, color: true

@@ -6,4 +6,11 @@
   - providers.each do |provider|
     = link_to provider_auth_path(provider, flow: flow), data: {flow: flow, provider: provider}, class: "btn btn-primary pull-left #{provider}" do
       %i{class: "icon-#{provider}"}>
-      #{provider}
+      - if provider == 'google_oauth2'
+        Google
+      - if provider == 'facebook'
+        Facebook
+      - if provider == 'linkedin'
+        Linkedin
+      - if provider == 'twitter'
+        Twitter

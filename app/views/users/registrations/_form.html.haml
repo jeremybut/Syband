@@ -2,7 +2,11 @@
 - hide_password ||= false
 
 = simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
-  = f.input :email, autofocus: true, required: true, label: false
+  .form-group
+    .input-group
+      %span.input-group-addon
+        %i.icon-envelope
+      = f.input :email, autofocus: true, required: true, label: false
 
   - if show_all or resource.try(:first_name).present? or resource.try(:last_name).present?
     = f.input :first_name, label: false
@@ -11,11 +15,20 @@
   - if resource.new_record?
     - unless hide_password
       %div{class: resource.errors.empty? ? 'collapse fade' : ''}
-        = f.input :password, required: true, autocomplete: 'off', label: false
+        .input-group
+          %span.input-group-addon
+            %i.icon-lock      
+          = f.input :password, required: true, autocomplete: 'off', label: false
 
   - else # updating resource
-    = f.input :password, autocomplete: 'off', label: false
-    - if resource.password_required?
-      = f.input :current_password, autocomplete: 'off', label: false
+    .input-group
+      %span.input-group-addon
+        %i.icon-lock
+      = f.input :password, autocomplete: 'off', label: false
+      - if resource.password_required?
+        .input-group
+          %span.input-group-addon
+            %i.icon-lock    
+          = f.input :current_password, autocomplete: 'off', label: false
 
   = f.button :submit, class: 'btn btn-lg btn-primary btn-block'

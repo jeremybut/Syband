@@ -2,7 +2,10 @@
   %img{:height => "30", :src => "/assets/logo-inverted.png"}
 
   = simple_form_for resource, as: resource_name, url: confirmation_path(resource_name), method: :post do |f|
-    = f.input :email, autofocus: true, required: true, label: false, disabled: (user_signed_in? and resource.email.present?)
+    .input-group
+      %span.input-group-addon
+        %i.icon-envelope  
+      = f.input :email, autofocus: true, required: true, label: false, disabled: (user_signed_in? and resource.email.present?)
     = f.button :submit, I18n.t('auth.confirm.submit'), class: 'btn btn-lg btn-primary btn-block'
 
   = render "users/shared/links", disable_forgot: true

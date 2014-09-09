@@ -1,10 +1,7 @@
 class LayoutsController < ActionController::Base
-	def home
-	end
+	# before_action :check_login
 
-	def login
-	end
-
-	def signin
-	end
+	# def check_login 
+	# 	redirect_to "/home"	
+	# end
 end
