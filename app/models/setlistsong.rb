@@ -14,8 +14,7 @@ class Setlistsong < ActiveRecord::Base
   belongs_to :setlist
   belongs_to :song
 
-  validates_presence_of :setlist_id
-  validates_presence_of :song_id
+  validates :setlist_id ,:song_id, :position, presence: true
 
   rails_admin do
     label "Setlist - Musique (setlistsong)" 

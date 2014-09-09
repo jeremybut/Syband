@@ -58,5 +58,14 @@ Rails.application.routes.draw do
 
   # get 'login' => 'layouts#login_landing'
   # get 'signin' => 'layouts#signin_landing'
-  root 'layouts#application_landing'
+  # root 'layouts#application_landing'
+  
+  authenticated :user do
+    root :to => 'pages#home', :conditions => lambda{ |req| !req.session["user_id"].blank? }
+  end
+
+  unauthenticated do
+    root :to => 'layouts#application_landing', as: 'unauthentificated'
+  end
+
 end
