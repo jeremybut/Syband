@@ -15,9 +15,7 @@ class Usersong < ActiveRecord::Base
   belongs_to :song
   has_one :status
 
-  validates_presence_of :user_id
-  validates_presence_of :song_id
-  validates_presence_of :status_id
+  validates :user_id, :song_id, :status_id, presence: true
 
   rails_admin do
     label "Utilisateur - Musique (usersong)" 

@@ -21,6 +21,8 @@ class Band < ActiveRecord::Base
   has_many :users, through: :memberships
   has_many :songs, through: :bandsongs
 
+  validates :name, presence: true
+  
   rails_admin do
     label "Groupe" 
     label_plural "Groupes"

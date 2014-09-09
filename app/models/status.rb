@@ -12,8 +12,7 @@
 class Status < ActiveRecord::Base
   belongs_to :usersongs
 
-  validates_presence_of :label
-  validates_presence_of :percentage
+  validates :label, :percentage, presence: true
 
   rails_admin do
     label "Statut" 
