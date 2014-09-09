@@ -55,7 +55,8 @@ default_env: &default_env
   AUTH_FACEBOOK_SECRET: '6e96984fcdfc3621de89e18ec78822c5'
   AUTH_LINKEDIN_KEY: '774uf4is1jk2sq'
   AUTH_LINKEDIN_SECRET: 'xsqwc1pUPqYetumB'
-
+  AUTH_SPOTIFY_KEY: 'b369a074ee9d4701ba37472e1b94817c'
+  AUTH_SPOTIFY_SECRET: '788c6e3fb5be48e3967e73f081727f8a'
 
   # Devise password encryption keys.
   # Channging the keys will invalidate user passwords,
