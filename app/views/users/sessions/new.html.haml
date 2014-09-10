@@ -1,29 +1,78 @@
-- resource.email = params[:email] unless resource.email.present?
+/ - resource.email = params[:email] unless resource.email.present?
 
-%a
-  %img.logo{:src => "/assets/logo-inverted.png"}  
+/ %a
+/   %img.logo{:src => "/assets/logo-inverted.png"}  
 
-= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-  - if devise_mapping.rememberable?
-    = f.input :remember_me, as: :hidden, input_html: {value: true}
-  .input-group
-    %span.input-group-addon
-      %i.icon-envelope    
-    = f.input :email, autofocus: true, required: true, label: false
+/ = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+/   - if devise_mapping.rememberable?
+/     = f.input :remember_me, as: :hidden, input_html: {value: true}
+/   .input-group
+/     %span.input-group-addon
+/       %i.icon-envelope    
+/     = f.input :email, autofocus: true, required: true, label: false
 
-  .input-group
-    %span.input-group-addon
-      %i.icon-lock        
-    = f.input_field :password, required: true, autocomplete: 'off'
-  = f.input :password, required: true, label: false do |input|
-    - if devise_mapping.recoverable?
-      = link_to I18n.t('auth.forgot.prompt'), new_password_path(resource_name), class: 'pull-right small'
-  = f.button :submit, I18n.t('auth.login.link'), class: 'btn btn-lg btn-primary btn-block' 
+/   .input-group
+/     %span.input-group-addon
+/       %i.icon-lock        
+/     = f.input_field :password, required: true, autocomplete: 'off'
+/   = f.input :password, required: true, label: false do |input|
+/     - if devise_mapping.recoverable?
+/       = link_to I18n.t('auth.forgot.prompt'), new_password_path(resource_name), class: 'pull-right small'
+/   = f.button :submit, I18n.t('auth.login.link'), class: 'btn btn-lg btn-primary btn-block' 
   
-  = render 'authentications/providers', flow: 'login', icons: true, color: true
+/   = render 'authentications/providers', flow: 'login', icons: true, color: true
+   
+/ %p
+/   Vous n'avez pas encore de compte?
+/ %a.btn.btn-default-outline.btn-block{:href => "/a/signup"} Inscription
+/ %p
+/   = render 'users/shared/links', disable_signup: true, disable_forgot: true
+
+
+
+- resource.email = params[:email] unless resource.email.present?
+#hero.static-header.light
+  .text-heading
+    %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
+      Connectez-vous
+  .container
+    .row
+      .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+
+        = simple_form_for resource, as: resource_name,input_html: { class: 'span12' }, url: session_path(resource_name) do |f|
+          - if devise_mapping.rememberable?
+            = f.input :remember_me, as: :hidden, input_html: {value: true}
+            .form-group
+              = f.input :email, autofocus: true, required: true, label: false, placeholder: 'Email'        
+ 
+            = f.input_field :password, required: true, autocomplete: 'off', placeholder: 'Mot de passe'
+          = f.input :password, required: true, label: false do |input|
+            - if devise_mapping.recoverable?
+              = link_to I18n.t('auth.forgot.prompt'), new_password_path(resource_name), class: 'pull-right small'
+          = f.button :submit, I18n.t('auth.login.link'), class: 'btn btn-primary btn-lg btn-block' 
+          
+          = render 'authentications/providers', flow: 'login', icons: true, color: true
    
 %p
   Vous n'avez pas encore de compte?
 %a.btn.btn-default-outline.btn-block{:href => "/a/signup"} Inscription
 %p
   = render 'users/shared/links', disable_signup: true, disable_forgot: true
+
+
+/   Connectez-vous depuis un réseau social.            
+/ .form-group
+/   .col-md-6
+/     %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+/       %i.fa.fa-facebook 
+/       Facebook
+/     %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+/       %i.fa.fa-google  
+/       Google            
+/   .col-md-6
+/     %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+/       %i.fa.fa-twitter
+/       Twiter              
+/     %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"}
+/       %i.fa.fa-linkedin
+/       Linkedin  
