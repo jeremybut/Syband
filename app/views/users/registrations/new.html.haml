@@ -1,57 +1,63 @@
-- if resource.email.present?
-  - login_link = link_to I18n.t('auth.login.link'), add_to_url(new_user_session_path, email: resource.email)
-- else
-  - login_link = link_to I18n.t('auth.login.link'), new_user_session_path
+#hero.static-header.light
+  .text-heading
+    %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
+      Inscription via un réseau social
+  .container
+    .row.animated.hiding{"data-animation" => "bounceInUp", "data-delay" => "1500"}
+      .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+      
+        - if resource.email.present?
+          - login_link = link_to I18n.t('auth.login.link'), add_to_url(new_user_session_path, email: resource.email)
+        - else
+          - login_link = link_to I18n.t('auth.login.link'), new_user_session_path
 
-- if @failed
-  = render 'users/registrations/failed', provider: @provider
+        - if @failed
+          = render 'users/registrations/failed', provider: @provider
 
-.auth__form
-  - unless @auth
-    %a
-      %img.logo{:src => "/assets/logo-inverted.png"}       
+        - unless @auth
+          / .alert.alert-info
+          / %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+          / = I18n.t('auth.signup.title').html_safe
+          / = I18n.t('auth.signup.help', login_link: login_link).html_safe
+          / %i.icon.icon-alerts-18           
+          .form.form-register.dark.animated.hiding                             
+            = render 'authentications/providers', flow: 'signup', icons: true, color: true
 
-    = render 'authentications/providers', flow: 'signup', icons: true, color: true
-    .auth__or
-      %hr
-      %span ou
+        - else # @auth
+          .alert.alert-success
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+            = render 'users/avatar', size: :thumb, user: @auth
+            Bienvenue,
+            = @auth.display_name
+            Ce n'est pas vous?
+            = link_to 'Effacer', destroy_user_session_path, rel: :nofollow, class: 'btn-small btn-primary'
+            %i.icon.icon-badges-votes-10          
 
-  - else # @auth
-    %h2
-      = render 'users/avatar', size: :thumb, user: @auth
-      Bienvenue,
-      = @auth.display_name
-    %p
-      Ce n'est pas vous?
-      = link_to 'Effacer', destroy_user_session_path, rel: :nofollow, class: 'btn btn-default btn-xs'
+          - unless @existing_account
+            .alert.alert-info
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+              Nous avons pré-rempli vos informations depuis
+              = succeed '.' do
+                = @auth.provider_name
+              Veuillez vérifier et valider.
+              %i.icon.icon-alerts-18          
+        %hr
+        - if @existing_account
+          -if provider = @existing_account.authentications.first.try(:provider)
+            - url = provider_auth_path(provider, flow: 'login')
+            - login_with_link = link_to I18n.t('auth.login.link_with', provider: Authentication.provider_name(provider)), url
+          - else
+            - login_with_link = login_link
 
-    - unless @existing_account
-      %p
-        Nous avons rempli certaines informations depuis
-        = succeed '.' do
-          = @auth.provider_name
-        Veuillez vérifier ces informations et confirmer.
+          .alert.alert-warning
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+            = I18n.t('auth.signup.email_taken', login_link: login_with_link).html_safe
+            %i.icon.icon-alerts-01            
 
-  - if @existing_account
-    -if provider = @existing_account.authentications.first.try(:provider)
-      - url = provider_auth_path(provider, flow: 'login')
-      - login_with_link = link_to I18n.t('auth.login.link_with', provider: Authentication.provider_name(provider)), url
-    - else
-      - login_with_link = login_link
-    .alert.alert-warning
-      = I18n.t('auth.signup.email_taken', login_link: login_with_link).html_safe
 
-  = render 'users/registrations/form', hide_password: @auth.present?
+        = render 'users/registrations/form', hide_password: @auth.present?
 
-  .auth__links
-    En vous inscrivant, vous acceptez nos conditions
-    = link_to 'Conditions', terms_path
-    et
-    = succeed '.' do
-      = link_to 'Confidentialité', privacy_path
-
-  = render 'users/social/facepile'
-
-- content_for :on_ready do
-  $('input[name="user[email]"]').on('click keydown', function(){$(this).closest('form').find('.collapse').addClass('in')});
-
+        %hr
+        .social-text 
+          En validant, vous acceptez nos
+          = link_to 'Conditions', terms_path

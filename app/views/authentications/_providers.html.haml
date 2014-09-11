@@ -1,18 +1,19 @@
 - flow        ||= 'login'
 - providers   ||= Authentication.providers
-- css_class   ||= 'btn btn-primary pull-left'
+- css_class   ||= 'btn btn-primary btn-lg btn-block'
 
-.social-login.clearfix
+%ul.list-inline
   - providers.each do |provider|
-    = link_to provider_auth_path(provider, flow: flow), data: {flow: flow, provider: provider}, class: "btn btn-primary pull-left #{provider}" do
-      %i{class: "icon-#{provider}"}>
-      - if provider == 'google_oauth2'
-        Google
-      - if provider == 'facebook'
-        Facebook
-      - if provider == 'linkedin'
-        Linkedin
-      - if provider == 'twitter'
-        Twitter
-      - if provider == 'spotify'
-        Spotify
+    %li
+      = link_to provider_auth_path(provider, flow: flow), data: {flow: flow, provider: provider} do
+        %i{class: "fa fa-#{provider}"}>
+        - if provider == 'google_oauth2'
+          Google
+        - if provider == 'facebook'
+          Facebook
+        - if provider == 'linkedin'
+          Linkedin
+        - if provider == 'twitter'
+          Twitter
+        - if provider == 'spotify'
+          Spotify

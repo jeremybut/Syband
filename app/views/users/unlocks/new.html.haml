@@ -1,11 +1,13 @@
-%a
-  %img.logo{:src => "/assets/logo-inverted.png"}
-
-  = simple_form_for resource, as: resource_name, url: unlock_path(resource_name), method: :post do |f|
-    .input-group
-      %span.input-group-addon
-        %i.icon-envelope  
-      = f.input :email, autofocus: true, label: false, required: true
-    = f.button :submit, I18n.t('auth.unlock.submit'), class: 'btn btn-lg btn-primary btn-block'
-
-  = render "users/shared/links", disable_forgot: true
+#hero.static-header.light
+  .text-heading
+    %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
+      Débloquer votre compte
+  .container
+    .row.animated.hiding{"data-animation" => "bounceInUp", "data-delay" => "1500"}
+      .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+        = simple_form_for resource, :html => {:class => 'form form-register dark animated hiding' },  as: resource_name, url: unlock_path(resource_name), method: :post do |f|
+          = f.input :email, autofocus: true, label: false, required: true
+          = f.button :submit, I18n.t('auth.unlock.submit'), class: 'btn btn-lg btn-primary btn-block'
+          %hr
+          .social-text                     
+            = render "users/shared/links", disable_signup: true, disable_login: true, disable_forgot: true

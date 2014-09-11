@@ -62,9 +62,9 @@
     /[if lt IE 9]
     %script{:src => "/javascripts/html5.js"}
     %script{:src => "/javascripts/respond.min.js"}
-  %body#landing-page
-    #mask
-      #loader     
-    = render '/layouts/landing/navigation_secondary'
-    = yield
-    = render '/layouts/landing/javascripts'    
+    %body#landing-page
+      #mask
+        #loader     
+      = render '/layouts/landing/navigation_secondary'
+      = yield
+      = render '/layouts/landing/javascripts'    

@@ -44,12 +44,12 @@ defaults: &defaults
         access_type: offline
         approval_prompt: force
         scope: https://www.google.com/m8/feeds,userinfo.email,userinfo.profile
-    linkedin:
-      name: LinkedIn
-      logout: 'https://www.linkedin.com'
-      key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
-      secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
-      scope: 'r_fullprofile r_emailaddress r_network'
+    # linkedin:
+    #   name: LinkedIn
+    #   logout: 'https://www.linkedin.com'
+    #   key: <%= ENV['AUTH_LINKEDIN_KEY'] %>
+    #   secret: <%= ENV['AUTH_LINKEDIN_SECRET'] %>
+    #   scope: 'r_fullprofile r_emailaddress r_network'
     spotify:
       name: Spotify
       key: <%= ENV['AUTH_SPOTIFY_KEY'] %>

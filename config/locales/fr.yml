@@ -10,7 +10,7 @@ fr:
     login:
       title: 'Veuillez vous connecter, ou %{signup_link}'
       link: 'Connexion'
-      link_with: 'Connexion avec %{provider}'
+      link_with: 'Connexion avec %{provider} ?'
     signup:
       title: 'Inscription'
       link: 'Inscription'
