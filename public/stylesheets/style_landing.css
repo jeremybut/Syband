@@ -23,6 +23,11 @@
 *    17. Desktop large screen 1200px
 *
 */
+
+.row.margintop{
+  margin-top: 65px;
+}
+
 /* Fonts */
 .thin { font-family: 'Lato', sans-serif; font-weight: 300; }
 
