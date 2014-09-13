@@ -10,8 +10,7 @@
         = simple_form_for resource, :html => {:class => 'form form-register dark animated hiding' }, as: resource_name, url: session_path(resource_name) do |f|
           - if devise_mapping.rememberable?
             = f.input :remember_me, as: :hidden, input_html: {value: true}
-            .form-group
-              = f.input :email, autofocus: true, required: true, label: false, placeholder: 'Email'        
+            = f.input :email, autofocus: true, required: true, label: false, placeholder: 'Email'        
             = f.input_field :password, required: true, autocomplete: 'off', placeholder: 'Mot de passe'
           = f.input :password, required: true, label: false do |input|
             - if devise_mapping.recoverable?

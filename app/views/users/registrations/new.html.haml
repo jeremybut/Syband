@@ -14,12 +14,7 @@
         - if @failed
           = render 'users/registrations/failed', provider: @provider
 
-        - unless @auth
-          / .alert.alert-info
-          / %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
-          / = I18n.t('auth.signup.title').html_safe
-          / = I18n.t('auth.signup.help', login_link: login_link).html_safe
-          / %i.icon.icon-alerts-18           
+        - unless @auth   
           .form.form-register.dark.animated.hiding                             
             = render 'authentications/providers', flow: 'signup', icons: true, color: true
 
@@ -60,4 +55,4 @@
         %hr
         .social-text 
           En validant, vous acceptez nos
-          = link_to 'Conditions', terms_path
+          = link_to 'Conditions', terms_path, target: "_blank"

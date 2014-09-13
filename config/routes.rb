@@ -22,8 +22,7 @@ Rails.application.routes.draw do
 
   # Static pages
   match '/error' => 'pages#error', via: [:get, :post], as: 'error_page'
-  get '/terms' => 'pages#terms', as: 'terms'
-  get '/privacy' => 'pages#privacy', as: 'privacy'
+  get '/terms' => 'public#terms', as: 'terms'
 
   # OAuth
   oauth_prefix = Rails.application.config.auth.omniauth.path_prefix
@@ -47,7 +46,6 @@ Rails.application.routes.draw do
   resources :users, path: 'u', only: :show do
     resources :authentications, path: 'accounts'
   end
-  # get '/home' => 'users#show', as: 'user_home'
   get '/home' => 'pages#home', as: 'user_home'
 
   # Dummy preview pages for testing.
@@ -56,10 +54,6 @@ Rails.application.routes.draw do
 
   get 'robots.:format' => 'robots#index'
 
-  # get 'login' => 'layouts#login_landing'
-  # get 'signin' => 'layouts#signin_landing'
-  # root 'layouts#application_landing'
-  
   authenticated :user do
     root :to => 'pages#home', :conditions => lambda{ |req| !req.session["user_id"].blank? }
   end

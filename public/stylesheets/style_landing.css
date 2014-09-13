@@ -647,7 +647,7 @@ input[type=file]:focus, input[type=radio]:focus, input[type=checkbox]:focus { ou
     .text-heading { padding-top: 150px; }
     
     .form-register { margin-top: 50px; }
-    .form-register .form-group { margin-bottom: 10px; margin-top: 0; margin-left: -15px; margin-right: -15px;}
+    .form-register .form-group { margin-bottom: 10px; margin-top: 0;}
     .form-register .form-group label { line-height: 30px; margin-top: 15px; text-align: left; }
 	.form-register-small label.error { display: inline-block; position:relative; }
     .form-register .form-group .checkbox { margin-bottom: 20px; margin-top: 30px; }

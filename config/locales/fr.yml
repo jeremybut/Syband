@@ -21,7 +21,7 @@ fr:
     forgot:
       link: "J\'ai oublié mon mot de passe"
       prompt: 'Mot de passe oublié?'
-      submit: 'Envoyer les instructions de mot de passe oublié'
+      submit: 'Envoyer'
     reset:
       link: 'Changer votre mot de passe'
       submit: 'Réinitialiser mot de passe'
@@ -29,10 +29,10 @@ fr:
       invalid_message: 'Votre session est expirée, veuillez vous connecter à nouveau.'
     confirm:
       link: 'Je dois confirmer mon compte'
-      submit: 'Renvoyer les instructions de confirmation'
+      submit: 'Confirmer'
     unlock:
       link: 'Mon compte est bloqué'
-      submit: 'Renvoyer les instructions de déblocage'
+      submit: 'Débloquer'
     links:
       title: 'Aide compte'
     edit:
