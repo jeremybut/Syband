@@ -282,7 +282,7 @@ blockquote:after { font-family: "line-icons";  position: absolute; color: #1ac6f
 #hero .btn-primary:hover, #hero .btn-primary.hovered { background: rgba(26, 198, 255,0.9);  border:1px solid #1ac6ff;}
 #hero .list-inline { margin:0; }
 .static-header { -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; background-attachment: fixed; min-height: 1155px; position: relative; }
-.text-heading { position: relative; width: 100%; left: 0; right: 0; text-align: center; padding-top: 135px; }
+.text-heading { position: relative; width: 100%; left: 0; right: 0; text-align: center; padding-top: 60px; }
 .text-heading p { font-size: 23px; font-weight: 300; }
 .static-header h4 { text-align: center; display: block; position: absolute; bottom: 20px; left: 0; right: 0; width: 100%; margin-bottom: 0; }
 #register-page .text-heading { padding-top: 125px; }

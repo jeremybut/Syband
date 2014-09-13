@@ -3,9 +3,9 @@
 - css_class   ||= 'btn btn-primary btn-lg btn-block'
 
 - providers.each do |provider|
-  .col-md-3.col-sm-4.col-xs-12
+  .col-md-3.col-sm-3.col-xs-3
     = link_to provider_auth_path(provider, flow: flow), data: {flow: flow, provider: provider} do
-      %i{class: "fa fa-#{provider}"}>
+      %i{class: "fa fa-#{provider}", style: 'display:inline'}>
       - if provider == 'google_oauth2'
         Google
       - if provider == 'facebook'
