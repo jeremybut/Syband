@@ -49,14 +49,13 @@
     /[if lt IE 9]
     %script{:src => "/javascripts/html5.js"}
     %script{:src => "/javascripts/respond.min.js"}
-    %body#landing-page
+    %body.landing#landing-page
       #mask
         #loader     
-      = render '/layouts/landing/navigation_secondary'
-      .light      
-        .container
-          .row.margintop
-            .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
-              = render 'layouts/messages'
+      .navigation-header
+      .row.margintop
+      .container
+        .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+          = render 'layouts/messages'
       = yield
       = render '/layouts/landing/javascripts'    

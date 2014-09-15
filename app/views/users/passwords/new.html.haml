@@ -1,13 +1,13 @@
-#hero.static-header.light
+#hero#register-page
   .text-heading
     %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
       Mot de passe oublié
   .container
     .row.animated.hiding{"data-animation" => "bounceInUp", "data-delay" => "1500"}
       .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
-        = simple_form_for resource, :html => {:class => 'form form-register dark animated hiding' }, as: resource_name, url: password_path(resource_name), method: :post do |f|
+        = simple_form_for resource, :html => {:class => 'form form-register border-top dark animated hiding' }, as: resource_name, url: password_path(resource_name), method: :post do |f|
           = f.input :email, autofocus: true, required: true, label: false
           = f.button :submit, I18n.t('auth.forgot.submit'), class: 'btn btn-lg btn-primary btn-block'
           %hr
           .social-text           
-            = render "users/shared/links", disable_signup: true, disable_login: true
+            = render "users/shared/links", disable_confirmations: true, disable_unlock: true

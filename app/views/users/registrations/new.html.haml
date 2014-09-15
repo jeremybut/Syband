@@ -1,4 +1,4 @@
-#hero.static-header.light
+#hero#register-page
   .text-heading
     %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
       Inscription via un réseau social
@@ -15,7 +15,7 @@
           = render 'users/registrations/failed', provider: @provider
 
         - unless @auth   
-          .form.form-register.dark.animated.hiding                             
+          .form.form-register.border-top.dark.animated.hiding                             
             = render 'authentications/providers', flow: 'signup', icons: true, color: true
 
         - else # @auth
@@ -36,7 +36,7 @@
                 = @auth.provider_name
               Veuillez vérifier et valider.
               %i.icon.icon-alerts-18          
-        %hr
+
         - if @existing_account
           -if provider = @existing_account.authentications.first.try(:provider)
             - url = provider_auth_path(provider, flow: 'login')
@@ -51,8 +51,3 @@
 
 
         = render 'users/registrations/form', hide_password: @auth.present?
-
-        %hr
-        .social-text 
-          En validant, vous acceptez nos
-          = link_to 'Conditions', terms_path, target: "_blank"

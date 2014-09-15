@@ -2,7 +2,7 @@
 - hide_password ||= false
 
 
-= simple_form_for resource,:html => {:class => 'form form-register dark animated hiding' }, as: resource_name, url: registration_path(resource_name) do |f|
+= simple_form_for resource,:html => {:class => 'form form-register border-top dark animated hiding' }, as: resource_name, url: registration_path(resource_name) do |f|
   = f.input :email, autofocus: true, required: true, label: false
 
   - if show_all or resource.try(:first_name).present? or resource.try(:last_name).present?
@@ -19,3 +19,10 @@
       = f.input :current_password, autocomplete: 'off', label: false
 
   = f.button :submit, class: 'btn btn-lg btn-primary btn-block'
+  %hr
+    .social-text           
+      = render "users/shared/links", disable_confirmations: true, disable_unlock: true
+  %hr
+    .social-text 
+      En validant, vous acceptez nos
+      = link_to 'Conditions', terms_path, target: "_blank"

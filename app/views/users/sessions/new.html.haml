@@ -1,5 +1,5 @@
 - resource.email = params[:email] unless resource.email.present?
-#hero.static-header.light
+#hero#register-page
   .text-heading
     %p.animated.hiding{"data-animation" => "fadeInDown", "data-delay" => "2500"}
       Connectez-vous
@@ -7,7 +7,7 @@
     .row.animated.hiding{"data-animation" => "bounceInUp", "data-delay" => "1500"}
       .col-lg-6.col-lg-offset-3.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
 
-        = simple_form_for resource, :html => {:class => 'form form-register dark animated hiding' }, as: resource_name, url: session_path(resource_name) do |f|
+        = simple_form_for resource, :html => {:class => 'form form-register border-top dark animated hiding' }, as: resource_name, url: session_path(resource_name) do |f|
           - if devise_mapping.rememberable?
             = f.input :remember_me, as: :hidden, input_html: {value: true}
             = f.input :email, autofocus: true, required: true, label: false, placeholder: 'Email'        
@@ -22,4 +22,4 @@
           = render 'authentications/providers', flow: 'login', icons: true
           %hr
           .social-text  
-            = render 'users/shared/links', disable_signup: true, disable_forgot: true
+            = render 'users/shared/links', disable_forgot: true

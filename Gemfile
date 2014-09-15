@@ -68,6 +68,9 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'addressable'
 gem 'settingslogic'
 gem 'carrierwave', '~> 0.9'
+gem 'echowrap'
+gem 'will_paginate', '~> 3.0.4'
+gem "will_paginate-bootstrap", "~> 1.0.0"
 
 group :development do
   # Docs
