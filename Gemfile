@@ -123,7 +123,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  # gem 'capybara-webkit'
+  gem 'capybara-webkit'
   # gem 'poltergeist'           # alternative to capybara-webkit
   # gem 'capybara-firebug'
   # gem 'launchy'               # save_and_open_page support for rspec
@@ -154,5 +154,3 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor'          # https://devcenter.heroku.com/articles/rails4
 end
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
-gem 'tzinfo'
