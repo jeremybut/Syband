@@ -304,8 +304,8 @@ blockquote:after { font-family: "line-icons";  position: absolute; color: #1ac6f
 .register-version#hero .btn-primary, .register-version .submit-wrap { width:auto; }
 .register-version .signup-wrapper { text-align:center; width:auto; }
 
-#color-landing-page .navigation-brand .brand-logo .logo { display:block; height: 30px; background:url(/assets/images/logo-white.png) center center no-repeat; }
-#color-landing-page .fixmenu-stick .navigation-brand .brand-logo .logo { background:url(/assets/images/logo-inverted.png) center center no-repeat; }
+#color-landing-page .navigation-brand .brand-logo .logo { display:block; height: 30px; background:url(/assets/images/logo.png) center center no-repeat; }
+#color-landing-page .fixmenu-stick .navigation-brand .brand-logo .logo { background:url(/assets/images/logo.png) center center no-repeat; }
 #color-landing-page .long-block .btn-secondary { margin-top: 35px; }
 #color-landing-page .static-header { background-image:none; background-color:#1ac6ff; }
 #color-landing-page .navigation-header .navigation-bar > li.featured > a { color:#fff; border-color:#fff; }

@@ -289,10 +289,12 @@ body.login2 {
   transition: all 0.3s; }
   .navbar .container-fluid.top-bar {
     height: 46px;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 3px solid #1ac6ff;
     padding: 0 10px 0 20px;
     width: 100%;
-    float: left; }
+    float: left;
+    background-color: #333;
+    color: #1ac6ff; }
     .navbar .container-fluid.top-bar .navbar-toggle {
       position: absolute;
       top: 6px;
@@ -307,7 +309,7 @@ body.login2 {
       .navbar .container-fluid.top-bar .navbar-toggle .icon-bar {
         background-color: #c6c6c6; }
     .navbar .container-fluid.top-bar .logo {
-      background: url("/assets/logo-inverted.png") no-repeat 0 0;
+      background: url("/assets/logo.png") no-repeat 0 0;
       width: 212px;
       height: 28px;
       float: left;
@@ -336,7 +338,8 @@ body.login2 {
     .navbar .container-fluid.top-bar .nav {
       height: 100%;
       position: relative;
-      z-index: 100; }
+      z-index: 100; 
+      margin-right: 70px; }
       .navbar .container-fluid.top-bar .nav > li {
         height: 100%;
         margin-right: 5px;
@@ -399,7 +402,7 @@ body.login2 {
           margin-right: 0; }
           .navbar .container-fluid.top-bar .nav > li.user > a {
             padding: 5px 10px 6px;
-            color: #999999; }
+            color: #1ac6ff; }
           .navbar .container-fluid.top-bar .nav > li.user img {
             border-radius: 50%;
             margin-right: 8px; }
@@ -470,7 +473,10 @@ body.login2 {
 .navbar img {
   width: 34px;
 }
-
+img.logonav{
+  width: 155px;
+  margin-left: 70px;
+}
 /*----------------------------------------------------------------------------------- */
 /*  Page Titles */
 /*----------------------------------------------------------------------------------- */

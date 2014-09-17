@@ -64,9 +64,11 @@ you can use the generic selector below, but it's slower:
 }
 .se7en-flag:before {
   content: "\e000";
+  color: #1ac6ff;
 }
 .se7en-envelope:before {
   content: "\e005";
+  color: #1ac6ff;
 }
 .se7en-gear:before {
   content: "\e001";
