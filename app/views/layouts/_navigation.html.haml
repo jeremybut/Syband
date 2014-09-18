@@ -65,7 +65,9 @@
               - if current_user.is_admin?
                 %li= link_to I18n.t('admin.link'), rails_admin_path, data: {"no-turbolink" => true}
               %li= link_to I18n.t('account.edit.link'), edit_user_registration_path
-              %li= link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
+              %li
+                = link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
+                %i.fa.fa-sign-out
         - unless user_signed_in?
           %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
           %li= link_to I18n.t('auth.login.link'), new_user_session_path                
@@ -82,3 +84,7 @@
           %a{href: '/home', class: cp(user_home_path)}
             %span.se7en-home{"aria-hidden" => "true"}>
             Accueil
+        %li
+          %a{href: '/a/logout', class: cp(destroy_user_session_path)}
+            %span.glyphicon-log-out{"aria-hidden" => "true"}>
+            Déconnexion            

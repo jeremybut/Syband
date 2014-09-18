@@ -154,3 +154,7 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor'          # https://devcenter.heroku.com/articles/rails4
 end
+
+# Pour windows
+# gem 'tzinfo-data', platforms: [:mingw, :mswin]
+# gem 'tzinfo'
