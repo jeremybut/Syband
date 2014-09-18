@@ -606,7 +606,7 @@ input[type=file]:focus, input[type=radio]:focus, input[type=checkbox]:focus { ou
 	
     .navigation .container { padding:0; }
     .navigation-brand { float: none; margin-right: 0 !important; }
-    .navigation-brand .brand-logo { padding: 15px 0px 0px 0px; margin-left:15px; float: left; }
+    .navigation-brand .brand-logo { padding: 0px 0px 0px 0px; margin-left:15px; float: left; }
 	.navigation-header .navigation-brand { margin:0px 0px 0px 0px; }
 		
     .navigation-bar > li,

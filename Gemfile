@@ -2,73 +2,75 @@ source 'https://rubygems.org'
 
 # Monitoring
 gem 'rack-timeout', '~> 0.1.0beta3'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.9.4.245'
+
 # gem 'airbrake'                # use with airbrake.io or errbit
 # gem 'airbrake_user_attributes'  # use with self-hosted errbit; see config/initializers/airbrake.rb
 # gem 'rack-google-analytics'
 
 # Data
-gem 'pg'
-gem 'schema_plus'             # add better index and foreign key support
+gem 'pg', '~> 0.17.1'
+gem 'schema_plus', '~> 1.5.3'
 # gem 'jbuilder'
 
 # Assets
-gem 'sass-rails'
-gem 'haml-rails'
-gem 'simple_form'
-gem 'uglifier'
-gem 'headjs-rails'
+gem 'sass-rails', '~> 4.0.3'
+gem 'haml-rails', '~> 0.5.3'
+gem 'simple_form', '~> 3.0.2'
+gem 'uglifier', '~> 2.5.3'
+gem 'headjs-rails', '~> 0.4.2'
 
 # Javascript
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jquery-turbolinks'
-gem 'nprogress-rails'
+gem 'jquery-rails', '~> 3.1.2'
+gem 'turbolinks', '~> 2.3.0'
+gem 'jquery-turbolinks', '~> 2.1.0'
+gem 'nprogress-rails', '~> 0.1.6.2'
 
 # CoffeeScript
 # Not needed in production if precompiling assets
-gem 'coffee-rails'
+gem 'coffee-rails', '~> 4.0.1'
+
 # Uncomment if node.js is not installed
 # gem 'therubyracer', platforms: :ruby
 
 # Design
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.2.0.2'
 # gem 'bourbon'
 # gem 'neat'
 # gem 'country_select'
 
 # Email
-gem 'premailer-rails'
+gem 'premailer-rails', '~> 1.8.0'
 
 # Authentication
-gem 'devise'
-gem 'cancan'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
+gem 'devise', '~> 3.2.4'
+gem 'cancan', '~> 1.6.10'
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-facebook', '~> 2.0.0'
+gem 'omniauth-twitter', '~> 1.0.1'
+gem 'omniauth-google-oauth2', '~> 0.2.5'
 # gem 'omniauth-linkedin'
-gem 'omniauth-spotify'
+gem 'omniauth-spotify', '~> 0.0.5'
 # gem 'omniauth-persona'
 
 
 # Var env
-gem 'figaro'
+gem 'figaro', '~> 1.0.0'
 
 # Admin
-gem 'rails_admin'
+gem 'rails_admin', '~> 0.6.3'
 
 # Workers
-gem 'sidekiq'
-gem 'devise-async'
+gem 'sidekiq', '~> 3.2.1'
+gem 'devise-async', '~> 0.9.0'
 gem 'sinatra', require: false
 gem 'rails-i18n', '~> 4.0.0'
 
 # Utils
-gem 'addressable'
-gem 'settingslogic'
+gem 'addressable', '~> 2.3.6'
+gem 'settingslogic', '~> 2.0.9'
 gem 'carrierwave', '~> 0.9'
-gem 'echowrap'
+gem 'echowrap', '~> 0.1.4'
 gem 'will_paginate', '~> 3.0.4'
 gem "will_paginate-bootstrap", "~> 1.0.0"
 
