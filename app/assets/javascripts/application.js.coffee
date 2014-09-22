@@ -56,3 +56,60 @@
 # See avatar.scss and _avatar.html.haml
 # require imagesloaded
 # require avatar.errors
+
+$ ->
+  $("#artist").autocomplete
+    source: (request, response) ->
+      $.ajax
+        url: "http://developer.echonest.com/api/v4/artist/suggest"
+        dataType: "jsonp"
+        data:
+          results: 12
+          api_key: "VAWR14HUJP7LUI5T7"
+          format: "jsonp"
+          name: request.term
+
+        success: (data) ->
+          response $.map(data.response.artists, (item) ->
+            label: item.name
+            value: item.name
+            id: item.id
+          )
+          return
+
+      return
+
+    minLength: 3
+    select: (event, ui) ->
+      $("#log").empty()
+      $("#log").append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
+      return
+
+  $("#song").autocomplete
+    source: (request, response) ->
+      $.ajax
+        url: "http://developer.echonest.com/api/v4/song/search"
+        dataType: "jsonp"
+        data:
+          results: 12
+          api_key: "VAWR14HUJP7LUI5T7"
+          format: "jsonp"
+          title: request.term
+
+        success: (data) ->
+          response $.map(data.response.songs, (item) ->
+            label: item.artist_name + " " + item.title
+            value: item.title
+            id: item.id
+          )
+          return
+
+      return
+
+    minLength: 3
+    select: (event, ui) ->
+      $("#log").empty()
+      $("#log").append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
+      return      
+
+  return

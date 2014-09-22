@@ -1,10 +1,11 @@
-= simple_form_for(@song) do |f|
-  = f.error_notification
+.demo
+  %h2 Test de recherche d'artiste
+  .ui-widget
+    %label{:for => "artist"} Entrez un artiste:
+    %input#artist
 
-  .form-inputs
-    = f.input :title
-    = f.input :artist
-    = f.input :lyrics
-
-  .form-actions
-    = f.button :submit
+    %label{:for => "song"} Entrez un titre de chanson:    
+    %input#song
+  .ui-widget
+    Résultat:
+    #log.ui-widget-content

@@ -1,7 +1,8 @@
-.page-title
-  %h1
-    Page de test
-.row
-  .col-md-12
-    .widget-container.fluid-height
-      Test page
+.demo
+  %h2 Test de recherche d'artiste
+  .ui-widget
+    %label{:for => "artist"} Entrez un artiste:
+    %input#artist
+  .ui-widget
+    Résultat:
+    #log.ui-widget-content
