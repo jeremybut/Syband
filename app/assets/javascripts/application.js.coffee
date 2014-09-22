@@ -57,7 +57,16 @@
 # require imagesloaded
 # require avatar.errors
 
+
+
 $ ->
+  artist_id = undefined
+
+  $("#artist").keyup ->
+    artist_id = undefined if $("#artist").is(":blank")
+    return
+
+
   $("#artist").autocomplete
     source: (request, response) ->
       $.ajax
@@ -83,6 +92,7 @@ $ ->
     select: (event, ui) ->
       $("#log").empty()
       $("#log").append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
+      artist_id = ui.item.id
       return
 
   $("#song").autocomplete
@@ -95,13 +105,15 @@ $ ->
           api_key: "VAWR14HUJP7LUI5T7"
           format: "jsonp"
           title: request.term
+          artist_id: artist_id
 
         success: (data) ->
           response $.map(data.response.songs, (item) ->
-            label: item.artist_name + " " + item.title
+            label: item.artist_name + " - " + item.title
             value: item.title
             id: item.id
           )
+          console.log data.response
           return
 
       return

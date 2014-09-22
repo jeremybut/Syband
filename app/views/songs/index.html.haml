@@ -21,3 +21,17 @@
 %br
 
 = link_to 'New Song', new_song_path
+
+
+.demo
+  %h2 Test de recherche d'artiste
+  .ui-widget
+    %label{:for => "artist"} Entrez un artiste:
+    %input#artist
+
+    %label{:for => "song"} Entrez un titre de chanson:    
+    %input#song
+  .ui-widget
+    Résultat:
+    #log.ui-widget-content
+    
