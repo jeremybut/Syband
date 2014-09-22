@@ -113,7 +113,6 @@ $ ->
             value: item.title
             id: item.id
           )
-          console.log data.response
           return
 
       return
@@ -122,6 +121,48 @@ $ ->
     select: (event, ui) ->
       $("#log").empty()
       $("#log").append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
-      return      
+      return  
 
+
+    $("#btn-afficher-tout").click ->
+      if $("#song").is(":blank")
+        $.ajax
+          url: "http://developer.echonest.com/api/v4/artist/songs"
+          dataType: "jsonp"
+          data:
+            results: 12
+            api_key: "VAWR14HUJP7LUI5T7"
+            format: "jsonp"
+            name: $("#artist").val()
+
+          success: (data) ->
+            $("#log").empty()
+            $("#log").append "<ul> Resultats pour : " + $("#artist").val()
+            $.each data.response.songs, (i, item) ->
+              $("#log").append "<li>" + item.title + "</li>"
+              return
+            $("#log").append "</ul>"
+
+            return
+      else
+        $.ajax
+          url: "http://developer.echonest.com/api/v4/song/search"
+          dataType: "jsonp"
+          data:
+            results: 12
+            api_key: "VAWR14HUJP7LUI5T7"
+            format: "jsonp"
+            title: $("#song").val()
+            artist: $("#artist").val()
+
+          success: (data) ->
+            $("#log").empty()
+            $("#log").append "<ul>"
+            $.each data.response.songs, (i, item) ->
+              $("#log").append "<li>" + item.artist_name + " - " + item.title + "</li>"
+              return
+            $("#log").append "</ul>"
+
+            return
+      
   return
