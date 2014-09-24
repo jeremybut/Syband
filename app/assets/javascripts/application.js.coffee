@@ -91,7 +91,7 @@ $ ->
     minLength: 3
     select: (event, ui) ->
       $("#log").empty()
-      $("#log").append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
+      $("#log").css('display', 'none').append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
       artist_id = ui.item.id
       return
 
@@ -120,7 +120,7 @@ $ ->
     minLength: 3
     select: (event, ui) ->
       $("#log").empty()
-      $("#log").append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
+      $("#log").css('display', 'none').append (if ui.item then ui.item.id + " " + ui.item.label else "(nothing)")
       return  
 
 
@@ -159,7 +159,7 @@ $ ->
             $("#log").empty()
             $("#log").append "<ul>"
             $.each data.response.songs, (i, item) ->
-              $("#log").append "<li>" + item.artist_name + " - " + item.title + "</li>"
+              $("#log").append "<li style='list-type:none;'>" + item.artist_name + " - " + item.title + "</li>"
               return
             $("#log").append "</ul>"
 

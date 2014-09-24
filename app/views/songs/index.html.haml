@@ -1,37 +1,354 @@
-%h1 Listing songs
+.container-fluid.main-content
+  .page-title
+    %h1
+      Gestion des chansons
+  .row
+    .col-md-7
+      .widget-container.fluid-height.clearfix
+        .heading
+          %i.icon-table>
+          Liste des chansons
+        .widget-content.padded.clearfix
+          %table#datatable-editable.table.table-bordered.table-striped
+            %thead
+              %th
+                Artiste
+              %th
+                Titre
+              %th.hidden-xs
+                Album
+              %th.hidden-xs
+                Durée
+              %th.hidden-xs
+                Statut
+              %th{:width => "75"}
+            %tbody
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Creep
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  3:56
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash                  
+              %tr
+                %td
+                  Radiohead
+                %td
+                  How Do You?
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  2:12
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Stop Whispering
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  5:16
+                %td.hidden-xs
+                  %span.label.label-success Terminée
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Creep
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  3:56
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  How Do You?
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  2:12
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Stop Whispering
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  5:16
+                %td.hidden-xs
+                  %span.label.label-success Terminée
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Creep
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  3:56
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  How Do You?
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  2:12
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Stop Whispering
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  5:16
+                %td.hidden-xs
+                  %span.label.label-success Terminée
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
 
-%table
-  %tr
-    %th Title
-    %th Artist
-    %th Lyrics
-    %th
-    %th
-    %th
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Creep
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  3:56
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash                  
+              %tr
+                %td
+                  Radiohead
+                %td
+                  How Do You?
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  2:12
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Stop Whispering
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  5:16
+                %td.hidden-xs
+                  %span.label.label-success Terminée
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Creep
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  3:56
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  How Do You?
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  2:12
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Stop Whispering
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  5:16
+                %td.hidden-xs
+                  %span.label.label-success Terminée
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Creep
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  3:56
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  How Do You?
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  2:12
+                %td.hidden-xs
+                  %span.label.label-warning En cours
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash    
+              %tr
+                %td
+                  Radiohead
+                %td
+                  Stop Whispering
+                %td.hidden-xs
+                  Pablo Honey
+                %td.hidden-xs
+                  5:16
+                %td.hidden-xs
+                  %span.label.label-success Terminée
+                %td.actions
+                  .action-buttons
+                    %a.table-actions{:href => "#"}
+                      %i.icon-play
+                    %a.delete-row{:href => "#"}
+                      %i.icon-trash                                           
 
-  - @songs.each do |song|
-    %tr
-      %td= song.title
-      %td= song.artist
-      %td= song.lyrics
-      %td= link_to 'Show', song
-      %td= link_to 'Edit', edit_song_path(song)
-      %td= link_to 'Destroy', song, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Song', new_song_path
 
 
-.demo
-  %h2 Test de recherche d'artiste
-  .ui-widget
-    %label{:for => "artist"} Entrez un artiste:
-    %input#artist
+    .col-md-5
+      .widget-container.fluid-height.clearfix
+        .heading
+          %i.icon-collapse>
+          Ajouter une chanson
+        .widget-content.padded
+          %form.form-horizontal{:action => "#"}
+            .form-group
+              .col-md-12
+                .col-md-9
+                  %input#artist.form-control{:autocomplete => "on", :placeholder => "Recherche par artiste"}
+                .col-md-2 
+                  %a{id: 'btn-afficher-tout', class:'btn btn-primary'} Afficher tout
+            .form-group
+              .col-md-12
+                .col-md-9
+                  %input#song.form-control{:autocomplete => "on", :placeholder => "Recherche par titre"}
 
-    %label{:for => "song"} Entrez un titre de chanson:    
-    %input#song
-  .ui-widget
-    Résultat:
-    #log.ui-widget-content
-    
+        #log                       

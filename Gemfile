@@ -125,7 +125,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'capybara-webkit'
+  # gem 'capybara-webkit'
   # gem 'poltergeist'           # alternative to capybara-webkit
   # gem 'capybara-firebug'
   # gem 'launchy'               # save_and_open_page support for rspec
@@ -158,5 +158,5 @@ group :production do
 end
 
 # Pour windows
-# gem 'tzinfo-data', platforms: [:mingw, :mswin]
-# gem 'tzinfo'
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'tzinfo'
