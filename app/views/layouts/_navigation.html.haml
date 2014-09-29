@@ -82,9 +82,13 @@
       %ul.nav
         %li
           %a{href: '/home', class: cp(user_home_path)}
-            %span.se7en-home{"aria-hidden" => "true"}>
+            %span.glyphicon.glyphicon-home{"aria-hidden" => "true"}>
             Accueil
         %li
+          %a{href: '/songs', class: cp(songs_path)}
+            %span.glyphicon.glyphicon-music{"aria-hidden" => "true"}>
+            Songs            
+        %li
           %a{href: '/a/logout', class: cp(destroy_user_session_path)}
-            %span.glyphicon-log-out{"aria-hidden" => "true"}>
+            %span.glyphicon.glyphicon-log-out{"aria-hidden" => "true"}>
             Déconnexion            

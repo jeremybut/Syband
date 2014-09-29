@@ -3209,3 +3209,6 @@ body.fourofour {
 .ui-menu .ui-menu-item a.ui-state-active {
         margin: -1px;
 }
+#log li{
+  list-style: none;
+}

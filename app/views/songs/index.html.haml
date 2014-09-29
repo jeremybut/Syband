@@ -339,16 +339,20 @@
           %i.icon-collapse>
           Ajouter une chanson
         .widget-content.padded
+          .alert.alert-info#recherche{:style => 'display:none'}
+            %button.close{"data-dismiss" => "alert", :type => "button"}> ×
+            Vous devez recherchez et sélectionnez un artiste.    
           %form.form-horizontal{:action => "#"}
             .form-group
               .col-md-12
                 .col-md-9
                   %input#artist.form-control{:autocomplete => "on", :placeholder => "Recherche par artiste"}
                 .col-md-2 
-                  %a{id: 'btn-afficher-tout', class:'btn btn-primary'} Afficher tout
+                  %a{id: 'btn-afficher-tout', class:'btn btn-primary'} Tous les titres
             .form-group
               .col-md-12
                 .col-md-9
                   %input#song.form-control{:autocomplete => "on", :placeholder => "Recherche par titre"}
+            
 
-        #log                       
+        #log
