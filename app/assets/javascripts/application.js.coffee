@@ -70,7 +70,7 @@ $ ->
   $("#artist").autocomplete
     source: (request, response) ->
       $.ajax
-        url: "http://developer.echonest.com/api/v4/artist/suggest"
+        url: "https://developer.echonest.com/api/v4/artist/suggest"
         dataType: "jsonp"
         data:
           results: 12
@@ -98,7 +98,7 @@ $ ->
   $("#song").autocomplete
     source: (request, response) ->
       $.ajax
-        url: "http://developer.echonest.com/api/v4/song/search"
+        url: "https://developer.echonest.com/api/v4/song/search"
         dataType: "jsonp"
         data:
           results: 12
@@ -130,7 +130,7 @@ $ ->
 
       if $("#song").is(":blank")
         $.ajax
-          url: "http://developer.echonest.com/api/v4/artist/songs"
+          url: "https://developer.echonest.com/api/v4/artist/songs"
           dataType: "jsonp"
           data:
             results: 100
@@ -149,7 +149,7 @@ $ ->
             return
       else
         $.ajax
-          url: "http://developer.echonest.com/api/v4/song/search"
+          url: "https://developer.echonest.com/api/v4/song/search"
           dataType: "jsonp"
           data:
             results: 12
