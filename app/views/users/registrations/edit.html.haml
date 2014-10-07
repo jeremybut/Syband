@@ -1,16 +1,23 @@
-.auth__form
-  = render 'layouts/account_tabs'
-
-  - if devise_mapping.confirmable? and not resource.confirmed?
-    .alert.alert-warning.alert-dismissable
-      %button.close{'data-dismiss' => 'alert', 'aria-hidden' => true} &times;
-      %p= I18n.t 'devise.registrations.signed_up_but_unconfirmed'
-      %p= button_to I18n.t('auth.confirm.submit'), confirmation_path(resource_name), class: 'btn btn-warning btn-xs'
-
-  = render 'users/registrations/form', show_all: true
-%p
-  Vous n'avez pas encore de compte?
-%a.btn.btn-default-outline.btn-block{:href => "/a/signup"} Inscription
-%p
-  = render 'users/shared/links', disable_signup: true
+.container-fluid.main-content
+  .page-title
+    %h1 Mon compte
+  .row
+    .col-lg-9
+      .widget-container.fluid-height.clearfix
+        .widget-content.padded
+          .auth__form
+            = render 'layouts/account_tabs'
+            - if devise_mapping.confirmable? and not resource.confirmed?
+              .alert.alert-info
+                %button.close{"data-dismiss" => "alert", :type => "button"}> ×
+                %p= I18n.t 'devise.registrations.signed_up_but_unconfirmed'
+                %p= button_to I18n.t('auth.confirm.submit'), confirmation_path(resource_name), class: 'btn btn-xs btn-warning'
+            = render 'users/registrations/form', show_all: true
+          -if user_signed_in?
+          -else  
+            %p
+              Vous n'avez pas encore de compte?
+            %a.btn.btn-default-outline.btn-block{:href => "/a/signup"} Inscription
+            %p
+              = render 'users/shared/links', disable_signup: true
 

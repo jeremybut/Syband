@@ -1,3 +1,62 @@
+#myModal.modal.fade{style:"margin-top:100px"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+        %h4.modal-title
+          Assistant de création d'un groupe
+      .modal-body
+        .widget-container.fluid-height
+          .widget-content
+            #wizard.wizard
+              .padded
+                %ul.wizard-nav
+                  %li
+                    %a{"data-toggle" => "tab", :href => "#tab1"} 1
+                  %li
+                    %a{"data-toggle" => "tab", :href => "#tab2"} 2
+                  %li
+                    %a{"data-toggle" => "tab", :href => "#tab3"} 3
+                .progress.progress-striped.active
+                  .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "0", :role => "progressbar"}
+                .tab-content
+                  #tab1.tab-pane
+                    %h2
+                      Nom de mon groupe
+                    %form{:role => "form"}
+                      .form-group
+                        %input#name.form-control{:placeholder => "Nom de mon groupe", :type => "name"}
+                  #tab2.tab-pane
+                    %h2
+                      Image de mon groupe
+                    %form{:role => "form"}
+                      .form-group
+                        .fileupload.fileupload-new{"data-provides" => "fileupload"}
+                          .fileupload-new.img-thumbnail{:style => "width: 200px; height: 150px;"}
+                            %img{:src => "http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image"}
+                          .fileupload-preview.fileupload-exists.img-thumbnail{:style => "width: 200px; max-height: 150px"}
+                          %div
+                            %span.btn.btn-default.btn-file
+                              %span.fileupload-new Selectionner une image
+                              %span.fileupload-exists Modifier
+                              %input{:type => "file"}
+                            %a.btn.btn-default.fileupload-exists{"data-dismiss" => "fileupload", :href => "#"} Supprimer
+                  #tab3.tab-pane
+                    %h2
+                      Inviter des membres
+                    %form{:role => "form"}
+                      .form-group
+                        - user_current = current_user.last_name + " " + current_user.first_name
+                        %input#members.form-control{value:"#{user_current}","data-role" => "tagsinput",:placeholder => "", :type => "text"}
+
+                .pager
+                  .btn.btn-default-outline.btn-previous
+                    %i.icon-long-arrow-left>
+                    Retour
+                  .btn.btn-primary-outline.btn-next
+                    Continuer
+                    %i.icon-long-arrow-right
+
 .container-fluid.main-content
   .social-wrapper
     #social-container

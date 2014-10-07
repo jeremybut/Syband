@@ -7,7 +7,6 @@
 #= require selectivizr-min
 #= require jquery.mousewheel
 #= require jquery.vmap.min
-#= require jquery.vmap.sampledata
 #= require jquery.vmap.world
 #= require jquery.bootstrap.wizard
 #= require fullcalendar.min
@@ -40,7 +39,7 @@
 #= require jquery.sparkline.min
 #= require main
 #= require respond
-
+#= require bootstrap-tagsinput
 
 # themes starterapp
 
@@ -140,13 +139,12 @@ $ ->
 
           success: (data) ->
             $("#log").empty()
-            $("#log").append "<ul> Resultats pour : " + $("#artist").val()
+            $("#log").append "<h6> Résultats pour : " + $("#artist").val() + "</h6>"
             $.each data.response.songs, (i, item) ->
-              $("#log").append "<li>" + item.title + "</li>"
+              $("#log").append "<h5>" + item.title + "</h5>"
               return
-            $("#log").append "</ul>"
-
             return
+
       else
         $.ajax
           url: "https://developer.echonest.com/api/v4/song/search"
@@ -169,3 +167,10 @@ $ ->
             return
       
   return
+
+
+
+myModal = ->
+  $("#myModal").modal "show"
+  return
+setTimeout myModal, 2500

@@ -1,19 +1,133 @@
-%h1 Listing bands
 
-%table
-  %tr
-    %th Picture
-    %th
-    %th
-    %th
+/ %table
+/   %tr
+/     %th Picture
+/     %th
+/     %th
+/     %th
 
-  - @bands.each do |band|
-    %tr
-      %td= band.picture
-      %td= link_to 'Show', band
-      %td= link_to 'Edit', edit_band_path(band)
-      %td= link_to 'Destroy', band, :method => :delete, :data => { :confirm => 'Are you sure?' }
+/   - @bands.each do |band|
+/     %tr
+/       %td= band.picture
+/       %td= link_to 'Show', band
+/       %td= link_to 'Edit', edit_band_path(band)
+/       %td= link_to 'Destroy', band, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
+/ %br
 
-= link_to 'New Band', new_band_path
+/ = link_to 'New Band', new_band_path
+
+.container-fluid.main-content
+  .page-title
+    %h1
+      Gestion des membres
+  .row
+    .col-md-8
+      .widget-container.scrollable.list.task-widget
+        .heading
+          %i.icon-list>
+          Membres présents dans le groupe
+          %i.icon-plus.pull-right
+        .widget-content
+          %ul
+            %li
+              %label
+                %input.task-input{:checked => "checked", :type => "checkbox"}
+                  %span
+                  .label.label-success.pull-right
+                    Accepté
+                  Utilisateur 1
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-success.pull-right
+                    Accepté
+                  Utilisateur 2
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-warning.pull-right
+                    En attente
+                  Utilisateur 3
+            %li
+              %label
+                %input.task-input{:checked => "checked", :type => "checkbox"}
+                  %span
+                  .label.label-danger.pull-right
+                    Refusé
+                  Utilisateur 4
+            %li
+              %label
+                %input.task-input{:checked => "checked", :type => "checkbox"}
+                  %span
+                  .label.label-success.pull-right
+                    Accepté
+                  Utilisateur 5
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-success.pull-right
+                    Accepté
+                  Utilisateur 6
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-danger.pull-right
+                    Refusé
+                  Utilisateur 7
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-warning.pull-right
+                    En attente
+                  Utilisateur 8
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-warning.pull-right
+                    En attente
+                  Utilisateur 9
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-success.pull-right
+                    Accepté
+                  Utilisateur 10
+            %li
+              %label
+                %input.task-input{:type => "checkbox"}
+                  %span
+                  .label.label-success.pull-right
+                    Accepté
+                  Utilisateur 11
+        %br
+        %button.btn.btn-danger Supprimer la séléction
+
+    .col-md-4
+      .page-title
+        .widget-container.scrollable.list.task-widget
+          .heading
+            %i.icon-list>
+            Ajouter des membres
+            %i.icon-plus.pull-right
+          .widget-content
+            .form-group
+              %label.control-label.col-md-3 Recherche
+              .col-md-7
+                .form-group
+                  - user_current = current_user.last_name + " " + current_user.first_name
+                  %input#members.form-control{value:"#{user_current}","data-role" => "tagsinput",:placeholder => "", :type => "text"}
+
+            .form-group
+              %label.control-label.col-md-3 Invitation par mail
+              .col-md-7
+                .form-group
+                  - user_current = current_user.last_name + " " + current_user.first_name
+                  %input#members.form-control{value:"mail@exemple.com","data-role" => "tagsinput",:placeholder => "", :type => "text"}

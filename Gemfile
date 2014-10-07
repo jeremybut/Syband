@@ -73,6 +73,7 @@ gem 'carrierwave', '~> 0.9'
 gem 'echowrap', '~> 0.1.4'
 gem 'will_paginate', '~> 3.0.4'
 gem "will_paginate-bootstrap", "~> 1.0.0"
+gem 'bootstrap-tagsinput-rails'
 
 group :development do
   # Docs
@@ -158,5 +159,5 @@ group :production do
 end
 
 # Pour windows
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
-gem 'tzinfo'
+# gem 'tzinfo-data', platforms: [:mingw, :mswin]
+# gem 'tzinfo'

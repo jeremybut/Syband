@@ -67,7 +67,6 @@
               %li= link_to I18n.t('account.edit.link'), edit_user_registration_path
               %li
                 = link_to I18n.t('auth.logout.link'), destroy_user_session_path, rel: :nofollow
-                %i.fa.fa-sign-out
         - unless user_signed_in?
           %li= link_to I18n.t('auth.signup.link'), new_user_registration_path
           %li= link_to I18n.t('auth.login.link'), new_user_session_path                
@@ -84,6 +83,10 @@
           %a{href: '/home', class: cp(user_home_path)}
             %span.glyphicon.glyphicon-home{"aria-hidden" => "true"}>
             Accueil
+        %li
+          %a{href: '/bands', class: cp(bands_path)}
+            %span.glyphicon.glyphicon-user{"aria-hidden" => "true"}>
+            Groupe
         %li
           %a{href: '/songs', class: cp(songs_path)}
             %span.glyphicon.glyphicon-music{"aria-hidden" => "true"}>

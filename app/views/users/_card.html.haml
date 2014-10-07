@@ -8,7 +8,7 @@
   = render 'users/avatar', user: user, size: size
   %h4= user.name
   .card__user__links
-    - if profile_url
-      = link_to username, profile_url, target: target
+    / - if profile_url
+    / = link_to username, profile_url, class:'btn btn-xs btn-default', target: target
 
   = yield

@@ -3212,3 +3212,7 @@ body.fourofour {
 #log li{
   list-style: none;
 }
+
+.card__user.card__user-thumb img{
+  max-height: 50px;
+}

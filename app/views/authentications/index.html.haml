@@ -1,36 +1,40 @@
-#authentications-index.auth__form
-  = render 'layouts/account_tabs'
+.container-fluid.main-content
+  .page-title
+    %h1 Mon compte
+  .row
+    .col-lg-9
+      .widget-container.fluid-height.clearfix
+        .widget-content.padded
+          #authentications-index.auth__form
+            = render 'layouts/account_tabs'
 
-  - if @failed
-    = render 'auth/failed', provider: @provider
+            - if @failed
+              = render 'auth/failed', provider: @provider
 
-  - disconnect_modal_id = 'disconnect-oauth-modal'
+            - disconnect_modal_id = 'disconnect-oauth-modal'
 
-  - Authentication.providers(:featured).each do |provider|
-    .auth__group
-      %h3
-        %i.sico-fixed{class: "sico-#{provider}"}
-        = Authentication.provider_name(provider)
+            - Authentication.providers(:featured).each do |provider|
+              .col-lg-3{style:'text-align:center'}
+                %h3
+                  %i{class: "fa fa-#{provider}"}
+                  = Authentication.provider_name(provider)
 
-      %ul
-        - auths = @authentications[provider]
-        - if auths.present?
-          - auths.each do |authentication|
-            %li
-              = render 'authentications/card', authentication: authentication, size: :thumb, disconnect_modal: "##{disconnect_modal_id}", return_to: @return_to
+                - auths = @authentications[provider]
+                - if auths.present?
+                  - auths.each do |authentication|
+                    = render 'authentications/card', authentication: authentication, size: :thumb, disconnect_modal: "##{disconnect_modal_id}", return_to: @return_to
 
-        - if auths.blank? or Authentication.allow_multiple_for?(provider)
-          %li
-            - another = auths.present? ? 'un autre ' : ''
-            = link_to provider_auth_path(provider, origin: @return_to), class: 'btn btn-primary btn-sm', data: {flow: 'connect'} do
-              %i{class: "sico-#{provider} sico-fixed"}
-              Connecter #{another}#{Authentication.provider_name(provider)}
-            - if auths.present? && provider == 'twitter'
-              .help-block
-                Vous aurez besoin de vous
-                = link_to 'déconnecter de twitter', Authentication.logout_url(:twitter), target: '_blank'
+                - if auths.blank? or Authentication.allow_multiple_for?(provider)
+                  - another = auths.present? ? 'un autre ' : ''
+                  = link_to provider_auth_path(provider, origin: @return_to), class: 'btn btn-primary btn-sm', data: {flow: 'connect'} do
+                    %i{class: "sico-#{provider} sico-fixed"}
+                    Connecter #{another}#{Authentication.provider_name(provider)}
+                  - if auths.present? && provider == 'twitter'
+                    .help-block
+                      Vous aurez besoin de vous
+                      = link_to 'déconnecter de twitter', Authentication.logout_url(:twitter), target: '_blank'
 
-= render 'layouts/destroy_modal', id: disconnect_modal_id, i18n_prefix: 'auth.destroy'
+          = render 'layouts/destroy_modal' ,id: disconnect_modal_id, i18n_prefix: 'auth.destroy'
 
-- content_for :on_ready do
-  $('#authentications-index [title]').tooltip({container: 'body', placement: 'bottom'})
+          - content_for :on_ready do
+            $('#authentications-index [title]').tooltip({container: 'body', placement: 'bottom'})

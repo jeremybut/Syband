@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update, :destroy]
+  skip_authorization_check
 
   # GET /bands
   def index

@@ -39,6 +39,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    bootstrap-tagsinput-rails (0.4.2.1)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -357,8 +359,6 @@ GEM
       coffee-rails
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2014.7)
-      tzinfo (>= 1.0.0)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -382,6 +382,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0.2)
+  bootstrap-tagsinput-rails
   cancan (~> 1.6.10)
   carrierwave (~> 0.9)
   coffee-rails (~> 4.0.1)
@@ -418,6 +419,7 @@ DEPENDENCIES
   rails-i18n (~> 4.0.0)
   rails_12factor
   rails_admin (~> 0.6.3)
+  rb-inotify
   rspec-rails
   rspec-sidekiq
   sass-rails (~> 4.0.3)
@@ -432,8 +434,6 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   turbolinks (~> 2.3.0)
-  tzinfo
-  tzinfo-data
   uglifier (~> 2.5.3)
   unicorn
   will_paginate (~> 3.0.4)
